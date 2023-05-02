@@ -79,7 +79,7 @@ public class Login extends javax.swing.JFrame {
         exitTxt.setFont(new java.awt.Font("Roboto Light", 0, 24)); // NOI18N
         exitTxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         exitTxt.setText("X");
-        exitTxt.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        exitTxt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         exitTxt.setPreferredSize(new java.awt.Dimension(40, 40));
         exitTxt.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -169,7 +169,7 @@ public class Login extends javax.swing.JFrame {
         loginBtnTxt.setForeground(new java.awt.Color(255, 255, 255));
         loginBtnTxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         loginBtnTxt.setText("ENTRAR");
-        loginBtnTxt.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        loginBtnTxt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         loginBtnTxt.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 loginBtnTxtMouseClicked(evt);
@@ -289,7 +289,7 @@ public class Login extends javax.swing.JFrame {
                         ex.printStackTrace();
                     }
                     counter = 0;
-                    message.setText("");
+                    //message.setText("");
                     loginBtnTxt.setEnabled(true);
                     }).start();
                 }
