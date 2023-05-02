@@ -1,10 +1,17 @@
 package com.login;
 
 import java.awt.Color;
+import java.util.concurrent.TimeUnit;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 
 public class Login extends javax.swing.JFrame {
     
     int xMouse, yMouse;
+    private int counter = 0;
+    private JLabel message;
+
     
     public Login() {
         initComponents();
@@ -72,7 +79,7 @@ public class Login extends javax.swing.JFrame {
         exitTxt.setFont(new java.awt.Font("Roboto Light", 0, 24)); // NOI18N
         exitTxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         exitTxt.setText("X");
-        exitTxt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        exitTxt.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         exitTxt.setPreferredSize(new java.awt.Dimension(40, 40));
         exitTxt.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -162,7 +169,7 @@ public class Login extends javax.swing.JFrame {
         loginBtnTxt.setForeground(new java.awt.Color(255, 255, 255));
         loginBtnTxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         loginBtnTxt.setText("ENTRAR");
-        loginBtnTxt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        loginBtnTxt.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         loginBtnTxt.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 loginBtnTxtMouseClicked(evt);
@@ -258,7 +265,40 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_passTxtMousePressed
 
     private void loginBtnTxtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginBtnTxtMouseClicked
-        javax.swing.JOptionPane.showMessageDialog(this, "Intento de login con los datos:\nUsuario: " + userTxt.getText() + "\nContraseña: " + String.valueOf(passTxt.getPassword()), "LOGIN", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        String usuario = userTxt.getText();
+        String contraseñausuario = new String(passTxt.getPassword());
+        
+        //inicio de la auntenticacion del boton
+        if (usuario.equals("user") && contraseñausuario.equals("user")) {
+            // Credenciales válidas
+            JOptionPane.showMessageDialog(this, "Bienvenido al sistema de estacionamiento!"+ usuario + "|");
+
+        } else {
+            
+            counter ++;
+                    if (counter == 3) {
+                JOptionPane.showMessageDialog(this, "Excediste el número de intentos. Espera 10 segundos.");
+                //message.setText("Excediste el número de intentos. Espera 10 segundos.");
+                loginBtnTxt.setEnabled(false);
+
+                // Esperar 10 segundos antes de habilitar el botón de nuevo
+                new Thread(() -> {
+                    try {
+                        TimeUnit.SECONDS.sleep(10);
+                    } catch (InterruptedException ex) {
+                        ex.printStackTrace();
+                    }
+                    counter = 0;
+                    message.setText("");
+                    loginBtnTxt.setEnabled(true);
+                    }).start();
+                }
+                    else {
+                JOptionPane.showMessageDialog(this, "Usuario o contraseña incorrectos. Intento " + counter + " de 3." );
+                //message.setText("Usuario o contraseña incorrectos. Intento " + counter + " de 3.");
+                   }
+            }
+        
     }//GEN-LAST:event_loginBtnTxtMouseClicked
 
     /**
@@ -292,6 +332,7 @@ public class Login extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Login().setVisible(true);
+                
             }
         });
     }
