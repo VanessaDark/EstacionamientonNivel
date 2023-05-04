@@ -52,6 +52,8 @@ public class login_admin extends javax.swing.JFrame {
         header = new javax.swing.JPanel();
         exitBtn = new javax.swing.JPanel();
         exitTxt = new javax.swing.JLabel();
+        log_out_admin = new javax.swing.JPanel();
+        log_oudadmin = new javax.swing.JLabel();
         favicon2 = new javax.swing.JLabel();
         title1 = new javax.swing.JLabel();
         userLabel = new javax.swing.JLabel();
@@ -159,17 +161,57 @@ public class login_admin extends javax.swing.JFrame {
             .addComponent(exitTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        log_out_admin.setBackground(new java.awt.Color(255, 255, 255));
+
+        log_oudadmin.setBackground(new java.awt.Color(0, 0, 0));
+        log_oudadmin.setFont(new java.awt.Font("Monospaced", 0, 15)); // NOI18N
+        log_oudadmin.setText("LOG OUT");
+        log_oudadmin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        log_oudadmin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                log_oudadminMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                log_oudadminMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                log_oudadminMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout log_out_adminLayout = new javax.swing.GroupLayout(log_out_admin);
+        log_out_admin.setLayout(log_out_adminLayout);
+        log_out_adminLayout.setHorizontalGroup(
+            log_out_adminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(log_out_adminLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(log_oudadmin, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(19, Short.MAX_VALUE))
+        );
+        log_out_adminLayout.setVerticalGroup(
+            log_out_adminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(log_out_adminLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(log_oudadmin, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout headerLayout = new javax.swing.GroupLayout(header);
         header.setLayout(headerLayout);
         headerLayout.setHorizontalGroup(
             headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(headerLayout.createSequentialGroup()
                 .addComponent(exitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 800, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(log_out_admin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 682, Short.MAX_VALUE))
         );
         headerLayout.setVerticalGroup(
             headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(exitBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(headerLayout.createSequentialGroup()
+                .addComponent(log_out_admin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         bg.add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 40));
@@ -358,6 +400,19 @@ public class login_admin extends javax.swing.JFrame {
         loginBtn.setBackground(new Color(0,134,190));
     }//GEN-LAST:event_loginBtnTxtMouseExited
 
+    private void log_oudadminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_log_oudadminMouseClicked
+       new Login().setVisible(true);
+       dispose();
+    }//GEN-LAST:event_log_oudadminMouseClicked
+
+    private void log_oudadminMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_log_oudadminMouseEntered
+        log_out_admin.setBackground(Color.LIGHT_GRAY);
+    }//GEN-LAST:event_log_oudadminMouseEntered
+
+    private void log_oudadminMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_log_oudadminMouseExited
+       log_out_admin.setBackground(Color.white);
+    }//GEN-LAST:event_log_oudadminMouseExited
+
     /**
      * @param args the command line arguments
      */
@@ -405,6 +460,8 @@ public class login_admin extends javax.swing.JFrame {
     private javax.swing.JPanel header;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JLabel log_oudadmin;
+    private javax.swing.JPanel log_out_admin;
     private javax.swing.JPanel loginBtn;
     private javax.swing.JLabel loginBtnTxt;
     private javax.swing.JLabel logo;

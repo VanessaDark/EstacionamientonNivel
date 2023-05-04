@@ -45,6 +45,8 @@ public class login_root extends javax.swing.JFrame {
         header = new javax.swing.JPanel();
         exitBtn = new javax.swing.JPanel();
         exitTxt = new javax.swing.JLabel();
+        logaoutroot = new javax.swing.JPanel();
+        log_out_root = new javax.swing.JLabel();
         favicon = new javax.swing.JLabel();
         title = new javax.swing.JLabel();
         userLabel = new javax.swing.JLabel();
@@ -120,17 +122,53 @@ public class login_root extends javax.swing.JFrame {
             .addComponent(exitTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        logaoutroot.setBackground(new java.awt.Color(255, 255, 255));
+
+        log_out_root.setBackground(new java.awt.Color(255, 255, 255));
+        log_out_root.setText("LOG OUT");
+        log_out_root.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        log_out_root.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                log_out_rootMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                log_out_rootMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                log_out_rootMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout logaoutrootLayout = new javax.swing.GroupLayout(logaoutroot);
+        logaoutroot.setLayout(logaoutrootLayout);
+        logaoutrootLayout.setHorizontalGroup(
+            logaoutrootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, logaoutrootLayout.createSequentialGroup()
+                .addGap(0, 8, Short.MAX_VALUE)
+                .addComponent(log_out_root))
+        );
+        logaoutrootLayout.setVerticalGroup(
+            logaoutrootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(logaoutrootLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(log_out_root, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout headerLayout = new javax.swing.GroupLayout(header);
         header.setLayout(headerLayout);
         headerLayout.setHorizontalGroup(
             headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(headerLayout.createSequentialGroup()
                 .addComponent(exitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 800, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(logaoutroot, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 717, Short.MAX_VALUE))
         );
         headerLayout.setVerticalGroup(
             headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(exitBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(logaoutroot, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         root.add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 40));
@@ -317,6 +355,19 @@ public class login_root extends javax.swing.JFrame {
         loginBtn.setBackground(new Color(0,134,190));
     }//GEN-LAST:event_loginBtnTxtMouseExited
 
+    private void log_out_rootMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_log_out_rootMouseClicked
+        new Login().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_log_out_rootMouseClicked
+
+    private void log_out_rootMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_log_out_rootMouseEntered
+        logaoutroot.setBackground(Color.LIGHT_GRAY);
+    }//GEN-LAST:event_log_out_rootMouseEntered
+
+    private void log_out_rootMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_log_out_rootMouseExited
+        logaoutroot.setBackground(Color.white);
+    }//GEN-LAST:event_log_out_rootMouseExited
+
     /**
      * @param args the command line arguments
      */
@@ -360,6 +411,8 @@ public class login_root extends javax.swing.JFrame {
     private javax.swing.JPanel header;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JLabel log_out_root;
+    private javax.swing.JPanel logaoutroot;
     private javax.swing.JPanel loginBtn;
     private javax.swing.JLabel loginBtnTxt;
     private javax.swing.JLabel logo;
