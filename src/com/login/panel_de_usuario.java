@@ -44,6 +44,14 @@ public class panel_de_usuario extends javax.swing.JFrame {
         logaoutroot = new javax.swing.JPanel();
         log_out_root = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        lugar_usuario = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        entrada_salida = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        inicio_termino_membresia = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        renovar_membresia = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -135,7 +143,7 @@ public class panel_de_usuario extends javax.swing.JFrame {
                 .addComponent(exitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(logaoutroot, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 597, Short.MAX_VALUE))
+                .addGap(0, 517, Short.MAX_VALUE))
         );
         headerLayout.setVerticalGroup(
             headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -143,7 +151,7 @@ public class panel_de_usuario extends javax.swing.JFrame {
             .addComponent(logaoutroot, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        usuario_panel.add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 40));
+        usuario_panel.add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 40));
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 255));
 
@@ -151,14 +159,86 @@ public class panel_de_usuario extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 290, Short.MAX_VALUE)
+            .addGap(0, 370, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 530, Short.MAX_VALUE)
         );
 
-        usuario_panel.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 0, 290, 530));
+        usuario_panel.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 0, 370, 530));
+
+        jLabel1.setText("Ubicacion del automovil");
+
+        javax.swing.GroupLayout lugar_usuarioLayout = new javax.swing.GroupLayout(lugar_usuario);
+        lugar_usuario.setLayout(lugar_usuarioLayout);
+        lugar_usuarioLayout.setHorizontalGroup(
+            lugar_usuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lugar_usuarioLayout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(jLabel1)
+                .addContainerGap(37, Short.MAX_VALUE))
+        );
+        lugar_usuarioLayout.setVerticalGroup(
+            lugar_usuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+
+        usuario_panel.add(lugar_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 230, 40));
+
+        jLabel2.setText("entrada y salida del auto");
+
+        javax.swing.GroupLayout entrada_salidaLayout = new javax.swing.GroupLayout(entrada_salida);
+        entrada_salida.setLayout(entrada_salidaLayout);
+        entrada_salidaLayout.setHorizontalGroup(
+            entrada_salidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(entrada_salidaLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(jLabel2)
+                .addContainerGap(37, Short.MAX_VALUE))
+        );
+        entrada_salidaLayout.setVerticalGroup(
+            entrada_salidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+
+        usuario_panel.add(entrada_salida, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, -1, 40));
+
+        jLabel3.setText("Informacion de la membresia ");
+
+        javax.swing.GroupLayout inicio_termino_membresiaLayout = new javax.swing.GroupLayout(inicio_termino_membresia);
+        inicio_termino_membresia.setLayout(inicio_termino_membresiaLayout);
+        inicio_termino_membresiaLayout.setHorizontalGroup(
+            inicio_termino_membresiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, inicio_termino_membresiaLayout.createSequentialGroup()
+                .addContainerGap(19, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGap(17, 17, 17))
+        );
+        inicio_termino_membresiaLayout.setVerticalGroup(
+            inicio_termino_membresiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+
+        usuario_panel.add(inicio_termino_membresia, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, -1, 40));
+
+        jLabel4.setText("Renovación de la membresia");
+
+        javax.swing.GroupLayout renovar_membresiaLayout = new javax.swing.GroupLayout(renovar_membresia);
+        renovar_membresia.setLayout(renovar_membresiaLayout);
+        renovar_membresiaLayout.setHorizontalGroup(
+            renovar_membresiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(renovar_membresiaLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jLabel4)
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+        renovar_membresiaLayout.setVerticalGroup(
+            renovar_membresiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+
+        usuario_panel.add(renovar_membresia, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 350, -1, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -248,12 +328,20 @@ public class panel_de_usuario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel entrada_salida;
     private javax.swing.JPanel exitBtn;
     private javax.swing.JLabel exitTxt;
     private javax.swing.JPanel header;
+    private javax.swing.JPanel inicio_termino_membresia;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel log_out_root;
     private javax.swing.JPanel logaoutroot;
+    private javax.swing.JPanel lugar_usuario;
+    private javax.swing.JPanel renovar_membresia;
     private javax.swing.JPanel usuario_panel;
     // End of variables declaration//GEN-END:variables
 }
