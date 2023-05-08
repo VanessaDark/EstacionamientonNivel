@@ -16,7 +16,11 @@ public class Login extends javax.swing.JFrame {
     
     public Login() {
         initComponents();
+       
+    
     }
+    
+    
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -432,6 +436,25 @@ public class Login extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        
+       Bienvenida bv=new Bienvenida();
+       bv.setVisible(true); 
+       Login lg=new Login();
+       try{
+         for(int i=0; i<=100; i++){
+           Thread.sleep(40);
+           bv.Porcentaje.setText(Integer.toString(i)+"%");
+           bv.Barra.setValue(i);  
+           
+           if(i ==100){
+               bv.setVisible(false);
+               lg.setVisible(true);
+           }
+       }  
+       }catch(Exception e){
+           
+       }
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
