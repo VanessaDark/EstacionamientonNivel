@@ -2,30 +2,31 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.login;
+package root;
 
-/**
- *
- * @author lxrdszn
- */
-
+import com.login.Login;
+import java.awt.Color;
+import javax.swing.JLabel;
 import java.awt.Color;
 import static java.awt.Color.white;
 import java.util.concurrent.TimeUnit;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-public class login_admin extends javax.swing.JFrame {
-    
-        
+
+
+/**
+ *
+ * @author lxrdszn
+ */
+public class login_root extends javax.swing.JFrame {
     int xMouse, yMouse;
     private int counter = 0;
     private JLabel message;
 
-
     /**
-     * Creates new form login_admin
+     * Creates new form login_root
      */
-    public login_admin() {
+    public login_root() {
         initComponents();
     }
 
@@ -38,24 +39,17 @@ public class login_admin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panel_admin = new javax.swing.JPanel();
+        root = new javax.swing.JPanel();
         logo = new javax.swing.JLabel();
         logoname = new javax.swing.JLabel();
         citybg = new javax.swing.JLabel();
-        favicon = new javax.swing.JLabel();
-        favicon1 = new javax.swing.JLabel();
-        title = new javax.swing.JLabel();
-        bg = new javax.swing.JPanel();
-        logo1 = new javax.swing.JLabel();
-        logoname1 = new javax.swing.JLabel();
-        citybg1 = new javax.swing.JLabel();
         header = new javax.swing.JPanel();
         exitBtn = new javax.swing.JPanel();
         exitTxt = new javax.swing.JLabel();
-        log_out_admin = new javax.swing.JPanel();
-        log_oudadmin = new javax.swing.JLabel();
-        favicon2 = new javax.swing.JLabel();
-        title1 = new javax.swing.JLabel();
+        logaoutroot = new javax.swing.JPanel();
+        log_out_root = new javax.swing.JLabel();
+        favicon = new javax.swing.JLabel();
+        title = new javax.swing.JLabel();
         userLabel = new javax.swing.JLabel();
         userTxt = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
@@ -69,55 +63,23 @@ public class login_admin extends javax.swing.JFrame {
         setUndecorated(true);
         setResizable(false);
 
-        panel_admin.setBackground(new java.awt.Color(255, 255, 255));
-        panel_admin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        root.setBackground(new java.awt.Color(255, 255, 255));
+        root.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/logo.png"))); // NOI18N
-        panel_admin.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 90, 290, 140));
+        root.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 90, 290, 140));
 
         logoname.setBackground(new java.awt.Color(255, 255, 255));
         logoname.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         logoname.setForeground(new java.awt.Color(255, 255, 255));
         logoname.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         logoname.setText("NOMBRE EMPRESA");
-        panel_admin.add(logoname, new org.netbeans.lib.awtextra.AbsoluteConstraints(554, 250, 290, 20));
+        root.add(logoname, new org.netbeans.lib.awtextra.AbsoluteConstraints(554, 250, 290, 20));
 
         citybg.setBackground(new java.awt.Color(0, 134, 190));
         citybg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/city.png"))); // NOI18N
-        panel_admin.add(citybg, new org.netbeans.lib.awtextra.AbsoluteConstraints(548, 0, -1, 500));
-
-        favicon.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
-        favicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/favicon.png"))); // NOI18N
-        favicon.setText("LOGO");
-        panel_admin.add(favicon, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, -1, -1));
-
-        favicon1.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
-        favicon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/favicon.png"))); // NOI18N
-        favicon1.setText("LOGO");
-        panel_admin.add(favicon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, -1, -1));
-
-        title.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
-        title.setText("INICIAR SESIÓN");
-        panel_admin.add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
-
-        bg.setBackground(new java.awt.Color(255, 255, 255));
-        bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        logo1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        logo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/logo.png"))); // NOI18N
-        bg.add(logo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 90, 290, 140));
-
-        logoname1.setBackground(new java.awt.Color(255, 255, 255));
-        logoname1.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
-        logoname1.setForeground(new java.awt.Color(255, 255, 255));
-        logoname1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        logoname1.setText("NOMBRE EMPRESA");
-        bg.add(logoname1, new org.netbeans.lib.awtextra.AbsoluteConstraints(554, 250, 290, 20));
-
-        citybg1.setBackground(new java.awt.Color(0, 134, 190));
-        citybg1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/city.png"))); // NOI18N
-        bg.add(citybg1, new org.netbeans.lib.awtextra.AbsoluteConstraints(548, 0, -1, 500));
+        root.add(citybg, new org.netbeans.lib.awtextra.AbsoluteConstraints(548, 0, -1, 500));
 
         header.setBackground(new java.awt.Color(255, 255, 255));
         header.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -161,38 +123,36 @@ public class login_admin extends javax.swing.JFrame {
             .addComponent(exitTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        log_out_admin.setBackground(new java.awt.Color(255, 255, 255));
+        logaoutroot.setBackground(new java.awt.Color(255, 255, 255));
 
-        log_oudadmin.setBackground(new java.awt.Color(0, 0, 0));
-        log_oudadmin.setFont(new java.awt.Font("Monospaced", 0, 15)); // NOI18N
-        log_oudadmin.setText("LOG OUT");
-        log_oudadmin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        log_oudadmin.addMouseListener(new java.awt.event.MouseAdapter() {
+        log_out_root.setBackground(new java.awt.Color(255, 255, 255));
+        log_out_root.setText("LOG OUT");
+        log_out_root.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        log_out_root.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                log_oudadminMouseClicked(evt);
+                log_out_rootMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                log_oudadminMouseEntered(evt);
+                log_out_rootMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                log_oudadminMouseExited(evt);
+                log_out_rootMouseExited(evt);
             }
         });
 
-        javax.swing.GroupLayout log_out_adminLayout = new javax.swing.GroupLayout(log_out_admin);
-        log_out_admin.setLayout(log_out_adminLayout);
-        log_out_adminLayout.setHorizontalGroup(
-            log_out_adminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(log_out_adminLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(log_oudadmin, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+        javax.swing.GroupLayout logaoutrootLayout = new javax.swing.GroupLayout(logaoutroot);
+        logaoutroot.setLayout(logaoutrootLayout);
+        logaoutrootLayout.setHorizontalGroup(
+            logaoutrootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, logaoutrootLayout.createSequentialGroup()
+                .addGap(0, 8, Short.MAX_VALUE)
+                .addComponent(log_out_root))
         );
-        log_out_adminLayout.setVerticalGroup(
-            log_out_adminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(log_out_adminLayout.createSequentialGroup()
+        logaoutrootLayout.setVerticalGroup(
+            logaoutrootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(logaoutrootLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(log_oudadmin, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                .addComponent(log_out_root, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -202,32 +162,30 @@ public class login_admin extends javax.swing.JFrame {
             headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(headerLayout.createSequentialGroup()
                 .addComponent(exitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(log_out_admin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 682, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(logaoutroot, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 717, Short.MAX_VALUE))
         );
         headerLayout.setVerticalGroup(
             headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(exitBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(headerLayout.createSequentialGroup()
-                .addComponent(log_out_admin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(logaoutroot, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        bg.add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 40));
+        root.add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 40));
 
-        favicon2.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
-        favicon2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/favicon.png"))); // NOI18N
-        favicon2.setText("LOGO");
-        bg.add(favicon2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, -1, -1));
+        favicon.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
+        favicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/favicon.png"))); // NOI18N
+        favicon.setText("LOGO");
+        root.add(favicon, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, -1, -1));
 
-        title1.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
-        title1.setText("INICIAR SESIÓN");
-        bg.add(title1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
+        title.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
+        title.setText("INICIAR SESIÓN");
+        root.add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
 
         userLabel.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
         userLabel.setText("USUARIO");
-        bg.add(userLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, -1, -1));
+        root.add(userLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, -1, -1));
 
         userTxt.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         userTxt.setForeground(new java.awt.Color(204, 204, 204));
@@ -238,14 +196,14 @@ public class login_admin extends javax.swing.JFrame {
                 userTxtMousePressed(evt);
             }
         });
-        bg.add(userTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, 410, 30));
+        root.add(userTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, 410, 30));
 
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
-        bg.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, 410, 20));
+        root.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, 410, 20));
 
         passLabel.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
         passLabel.setText("CONTRASEÑA");
-        bg.add(passLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, -1, -1));
+        root.add(passLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, -1, -1));
 
         passTxt.setForeground(new java.awt.Color(204, 204, 204));
         passTxt.setText("********");
@@ -255,10 +213,10 @@ public class login_admin extends javax.swing.JFrame {
                 passTxtMousePressed(evt);
             }
         });
-        bg.add(passTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 410, 30));
+        root.add(passTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 410, 30));
 
         jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
-        bg.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 410, 20));
+        root.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 410, 20));
 
         loginBtn.setBackground(new java.awt.Color(0, 134, 190));
 
@@ -290,19 +248,17 @@ public class login_admin extends javax.swing.JFrame {
             .addComponent(loginBtnTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
-        bg.add(loginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 130, 40));
-
-        panel_admin.add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        root.add(loginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 130, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panel_admin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(root, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panel_admin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(root, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -314,7 +270,7 @@ public class login_admin extends javax.swing.JFrame {
 
     private void exitTxtMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxtMouseEntered
         exitBtn.setBackground(Color.red);
-        exitTxt.setForeground(Color.black);
+        exitTxt.setForeground(Color.white);
     }//GEN-LAST:event_exitTxtMouseEntered
 
     private void exitTxtMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitTxtMouseExited
@@ -360,7 +316,7 @@ public class login_admin extends javax.swing.JFrame {
         String contraseñausuario = new String(passTxt.getPassword());
 
         //inicio de la auntenticacion del boton
-        if (usuario.equals("admin") && contraseñausuario.equals("admin")) {
+        if (usuario.equals("user") && contraseñausuario.equals("user")) {
             // Credenciales válidas
             JOptionPane.showMessageDialog(this, "Bienvenido al sistema de estacionamiento!"+ usuario + "|");
 
@@ -400,18 +356,18 @@ public class login_admin extends javax.swing.JFrame {
         loginBtn.setBackground(new Color(0,134,190));
     }//GEN-LAST:event_loginBtnTxtMouseExited
 
-    private void log_oudadminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_log_oudadminMouseClicked
-       new Login().setVisible(true);
-       dispose();
-    }//GEN-LAST:event_log_oudadminMouseClicked
+    private void log_out_rootMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_log_out_rootMouseClicked
+        new Login().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_log_out_rootMouseClicked
 
-    private void log_oudadminMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_log_oudadminMouseEntered
-        log_out_admin.setBackground(Color.LIGHT_GRAY);
-    }//GEN-LAST:event_log_oudadminMouseEntered
+    private void log_out_rootMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_log_out_rootMouseEntered
+        logaoutroot.setBackground(Color.LIGHT_GRAY);
+    }//GEN-LAST:event_log_out_rootMouseEntered
 
-    private void log_oudadminMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_log_oudadminMouseExited
-       log_out_admin.setBackground(Color.white);
-    }//GEN-LAST:event_log_oudadminMouseExited
+    private void log_out_rootMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_log_out_rootMouseExited
+        logaoutroot.setBackground(Color.white);
+    }//GEN-LAST:event_log_out_rootMouseExited
 
     /**
      * @param args the command line arguments
@@ -430,49 +386,42 @@ public class login_admin extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(login_admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(login_root.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(login_admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(login_root.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(login_admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(login_root.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(login_admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(login_root.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new login_admin().setVisible(true);
+                new login_root().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel bg;
     private javax.swing.JLabel citybg;
-    private javax.swing.JLabel citybg1;
     private javax.swing.JPanel exitBtn;
     private javax.swing.JLabel exitTxt;
     private javax.swing.JLabel favicon;
-    private javax.swing.JLabel favicon1;
-    private javax.swing.JLabel favicon2;
     private javax.swing.JPanel header;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JLabel log_oudadmin;
-    private javax.swing.JPanel log_out_admin;
+    private javax.swing.JLabel log_out_root;
+    private javax.swing.JPanel logaoutroot;
     private javax.swing.JPanel loginBtn;
     private javax.swing.JLabel loginBtnTxt;
     private javax.swing.JLabel logo;
-    private javax.swing.JLabel logo1;
     private javax.swing.JLabel logoname;
-    private javax.swing.JLabel logoname1;
-    private javax.swing.JPanel panel_admin;
     private javax.swing.JLabel passLabel;
     private javax.swing.JPasswordField passTxt;
+    private javax.swing.JPanel root;
     private javax.swing.JLabel title;
-    private javax.swing.JLabel title1;
     private javax.swing.JLabel userLabel;
     private javax.swing.JTextField userTxt;
     // End of variables declaration//GEN-END:variables

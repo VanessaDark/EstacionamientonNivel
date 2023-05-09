@@ -2,8 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.login;
+package administrador;
 
+/**
+ *
+ * @author lxrdszn
+ */
+import com.login.Login;
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Color;
@@ -12,20 +17,15 @@ import java.util.concurrent.TimeUnit;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
-
-/**
- *
- * @author lxrdszn
- */
-public class login_root extends javax.swing.JFrame {
+public class login_admin extends javax.swing.JFrame {
     int xMouse, yMouse;
     private int counter = 0;
     private JLabel message;
 
     /**
-     * Creates new form login_root
+     * Creates new form login_admin
      */
-    public login_root() {
+    public login_admin() {
         initComponents();
     }
 
@@ -60,7 +60,6 @@ public class login_root extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setResizable(false);
 
         root.setBackground(new java.awt.Color(255, 255, 255));
         root.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -277,6 +276,19 @@ public class login_root extends javax.swing.JFrame {
         exitTxt.setForeground(Color.black);
     }//GEN-LAST:event_exitTxtMouseExited
 
+    private void log_out_rootMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_log_out_rootMouseClicked
+        new Login().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_log_out_rootMouseClicked
+
+    private void log_out_rootMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_log_out_rootMouseEntered
+        logaoutroot.setBackground(Color.LIGHT_GRAY);
+    }//GEN-LAST:event_log_out_rootMouseEntered
+
+    private void log_out_rootMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_log_out_rootMouseExited
+        logaoutroot.setBackground(Color.white);
+    }//GEN-LAST:event_log_out_rootMouseExited
+
     private void headerMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerMouseDragged
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
@@ -344,7 +356,6 @@ public class login_root extends javax.swing.JFrame {
                 //message.setText("Usuario o contraseña incorrectos. Intento " + counter + " de 3.");
             }
         }
-
     }//GEN-LAST:event_loginBtnTxtMouseClicked
 
     private void loginBtnTxtMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginBtnTxtMouseEntered
@@ -354,19 +365,6 @@ public class login_root extends javax.swing.JFrame {
     private void loginBtnTxtMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginBtnTxtMouseExited
         loginBtn.setBackground(new Color(0,134,190));
     }//GEN-LAST:event_loginBtnTxtMouseExited
-
-    private void log_out_rootMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_log_out_rootMouseClicked
-        new Login().setVisible(true);
-        dispose();
-    }//GEN-LAST:event_log_out_rootMouseClicked
-
-    private void log_out_rootMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_log_out_rootMouseEntered
-        logaoutroot.setBackground(Color.LIGHT_GRAY);
-    }//GEN-LAST:event_log_out_rootMouseEntered
-
-    private void log_out_rootMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_log_out_rootMouseExited
-        logaoutroot.setBackground(Color.white);
-    }//GEN-LAST:event_log_out_rootMouseExited
 
     /**
      * @param args the command line arguments
@@ -385,20 +383,20 @@ public class login_root extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(login_root.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(login_admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(login_root.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(login_admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(login_root.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(login_admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(login_root.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(login_admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new login_root().setVisible(true);
+                new login_admin().setVisible(true);
             }
         });
     }
