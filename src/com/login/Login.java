@@ -343,7 +343,7 @@ public class Login extends javax.swing.JFrame {
         if (usuario.equals("user") && contraseñausuario.equals("user")) {
             // Credenciales válidas
             JOptionPane.showMessageDialog(this, "Bienvenido al sistema de estacionamiento! ");
-            new panel_de_usuario().setVisible(true);
+            new panel_usr().setVisible(true);
             dispose();
 
         } else {

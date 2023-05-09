@@ -58,6 +58,7 @@ public class login_root extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JSeparator();
         loginBtn = new javax.swing.JPanel();
         loginBtnTxt = new javax.swing.JLabel();
+        mensaje = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -251,6 +252,9 @@ public class login_root extends javax.swing.JFrame {
 
         root.add(loginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 130, 40));
 
+        mensaje.setText("jLabel1");
+        root.add(mensaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 400, 130, 40));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -319,7 +323,10 @@ public class login_root extends javax.swing.JFrame {
         //inicio de la auntenticacion del boton
         if (usuario.equals("user") && contraseñausuario.equals("user")) {
             // Credenciales válidas
-            JOptionPane.showMessageDialog(this, "Bienvenido al sistema de estacionamiento!"+ usuario + "|");
+            JOptionPane.showMessageDialog(this, "Bienvenido al sistema de estacionamiento!");
+            
+            new panel_root().setVisible(true);
+            dispose();
 
         } else {
 
@@ -328,6 +335,7 @@ public class login_root extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Excediste el número de intentos. Espera 10 segundos.");
                 //message.setText("Excediste el número de intentos. Espera 10 segundos.");
                 loginBtnTxt.setEnabled(false);
+                mensaje.setText("Bloqueado");
 
                 // Esperar 10 segundos antes de habilitar el botón de nuevo
                 new Thread(() -> {
@@ -338,6 +346,7 @@ public class login_root extends javax.swing.JFrame {
                     }
                     counter = 0;
                     //message.setText("");
+                    mensaje.setText("Desbloqueado");
                     loginBtnTxt.setEnabled(true);
                 }).start();
             }
@@ -419,6 +428,7 @@ public class login_root extends javax.swing.JFrame {
     private javax.swing.JLabel loginBtnTxt;
     private javax.swing.JLabel logo;
     private javax.swing.JLabel logoname;
+    private javax.swing.JLabel mensaje;
     private javax.swing.JLabel passLabel;
     private javax.swing.JPasswordField passTxt;
     private javax.swing.JPanel root;

@@ -332,7 +332,10 @@ public class login_admin extends javax.swing.JFrame {
         //inicio de la auntenticacion del boton
         if (usuario.equals("user") && contraseñausuario.equals("user")) {
             // Credenciales válidas
-            JOptionPane.showMessageDialog(this, "Bienvenido al sistema de estacionamiento!"+ usuario + "|");
+            JOptionPane.showMessageDialog(this, "Bienvenido al sistema de estacionamiento!");
+            
+            new panel_admin().setVisible(true);
+            dispose();
 
         } else {
 

@@ -2,8 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package root;
+package administrador;
 
+import com.login.*;
+import root.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.Timer;
@@ -12,12 +14,12 @@ import javax.swing.Timer;
  *
  * @author vanes
  */
-public class panel_root extends javax.swing.JFrame {
+public class panel_admin extends javax.swing.JFrame {
 
     /**
      * Creates new form panel_root
      */
-    public panel_root() {
+    public panel_admin() {
         initComponents();
         this.setLocationRelativeTo(null);
         tiempo();
@@ -58,15 +60,13 @@ public class panel_root extends javax.swing.JFrame {
         lb_fecha = new javax.swing.JLabel();
         lb_hora = new javax.swing.JLabel();
         jButton8 = new javax.swing.JButton();
-        btn_membresia = new javax.swing.JButton();
-        btn_datosMembresia = new javax.swing.JButton();
-        btn_lugar = new javax.swing.JButton();
-        btn_hora = new javax.swing.JButton();
-        btn_datos = new javax.swing.JButton();
-        btn_salida = new javax.swing.JButton();
-        btn_cerrarSesion = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        btn_renovacion = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -116,55 +116,41 @@ public class panel_root extends javax.swing.JFrame {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 0, 280, 650));
 
-        btn_membresia.setBackground(new java.awt.Color(153, 255, 153));
-        btn_membresia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/carroAgr.png"))); // NOI18N
-        btn_membresia.setText("Membresia");
-        btn_membresia.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btn_membresia.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        btn_membresia.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jPanel1.add(btn_membresia, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 150, 80));
+        jButton1.setBackground(new java.awt.Color(153, 255, 153));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/carroAgr.png"))); // NOI18N
+        jButton1.setText("Membresia");
+        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 150, 80));
 
-        btn_datosMembresia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/IconGuardar.png"))); // NOI18N
-        btn_datosMembresia.setText("Datos membresia");
-        btn_datosMembresia.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btn_datosMembresia.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        btn_datosMembresia.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jPanel1.add(btn_datosMembresia, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, 150, 80));
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/Lugar.png"))); // NOI18N
+        jButton3.setText("Lugar");
+        jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jButton3.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, 150, 80));
 
-        btn_lugar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/Lugar.png"))); // NOI18N
-        btn_lugar.setText("Lugar");
-        btn_lugar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btn_lugar.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        btn_lugar.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jPanel1.add(btn_lugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, 150, 80));
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/reloj.png"))); // NOI18N
+        jButton4.setText("Hora");
+        jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jButton4.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, 150, 80));
 
-        btn_hora.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/reloj.png"))); // NOI18N
-        btn_hora.setText("Hora");
-        btn_hora.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btn_hora.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        btn_hora.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jPanel1.add(btn_hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 240, 150, 80));
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/coche.png"))); // NOI18N
+        jButton6.setText("Salida vehiculos");
+        jButton6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton6.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jButton6.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 250, 150, 80));
 
-        btn_datos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/icBuscar.png"))); // NOI18N
-        btn_datos.setText("Datos ");
-        btn_datos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btn_datos.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        btn_datos.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jPanel1.add(btn_datos, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 380, 150, 80));
-
-        btn_salida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/coche.png"))); // NOI18N
-        btn_salida.setText("Salida vehiculos");
-        btn_salida.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btn_salida.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        btn_salida.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jPanel1.add(btn_salida, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 380, 150, 80));
-
-        btn_cerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/salir.png"))); // NOI18N
-        btn_cerrarSesion.setText("Cerar sesión");
-        btn_cerrarSesion.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btn_cerrarSesion.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        btn_cerrarSesion.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jPanel1.add(btn_cerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 510, 150, 80));
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/salir.png"))); // NOI18N
+        jButton7.setText("Cerar sesión");
+        jButton7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton7.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jButton7.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 400, 150, 80));
 
         jLabel6.setFont(new java.awt.Font("Lucida Calligraphy", 1, 36)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(204, 255, 204));
@@ -172,11 +158,11 @@ public class panel_root extends javax.swing.JFrame {
         jLabel6.setText("Menu");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, 150, -1));
 
-        btn_renovacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/renovacion.png"))); // NOI18N
-        btn_renovacion.setText("Renovacion");
-        btn_renovacion.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btn_renovacion.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jPanel1.add(btn_renovacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 510, 150, 80));
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/renovacion.png"))); // NOI18N
+        jButton9.setText("Renovacion");
+        jButton9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton9.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        jPanel1.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 400, 150, 80));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/FondoMenu.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -213,34 +199,35 @@ public class panel_root extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(panel_root.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(panel_admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(panel_root.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(panel_admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(panel_root.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(panel_admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(panel_root.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(panel_admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new panel_root().setVisible(true);
+                new panel_admin().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_cerrarSesion;
-    private javax.swing.JButton btn_datos;
-    private javax.swing.JButton btn_datosMembresia;
-    private javax.swing.JButton btn_hora;
-    private javax.swing.JButton btn_lugar;
-    private javax.swing.JButton btn_membresia;
-    private javax.swing.JButton btn_renovacion;
-    private javax.swing.JButton btn_salida;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
