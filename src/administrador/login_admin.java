@@ -27,6 +27,8 @@ public class login_admin extends javax.swing.JFrame {
      */
     public login_admin() {
         initComponents();
+       
+        
     }
 
     /**
@@ -59,6 +61,7 @@ public class login_admin extends javax.swing.JFrame {
         loginBtnTxt = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocationByPlatform(true);
         setUndecorated(true);
 
         root.setBackground(new java.awt.Color(255, 255, 255));

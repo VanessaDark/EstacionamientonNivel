@@ -26,6 +26,7 @@ public class panel_de_usuario extends javax.swing.JFrame {
      */
     public panel_de_usuario() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
