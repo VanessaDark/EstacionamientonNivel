@@ -7,6 +7,8 @@ package root;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.Timer;
+import com.login.Login;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -122,6 +124,11 @@ public class panel_root extends javax.swing.JFrame {
         btn_membresia.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_membresia.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         btn_membresia.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        btn_membresia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_membresiaActionPerformed(evt);
+            }
+        });
         jPanel1.add(btn_membresia, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 150, 80));
 
         btn_datosMembresia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/IconGuardar.png"))); // NOI18N
@@ -129,6 +136,11 @@ public class panel_root extends javax.swing.JFrame {
         btn_datosMembresia.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_datosMembresia.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         btn_datosMembresia.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        btn_datosMembresia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_datosMembresiaActionPerformed(evt);
+            }
+        });
         jPanel1.add(btn_datosMembresia, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, 150, 80));
 
         btn_lugar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/Lugar.png"))); // NOI18N
@@ -136,6 +148,11 @@ public class panel_root extends javax.swing.JFrame {
         btn_lugar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_lugar.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         btn_lugar.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        btn_lugar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_lugarActionPerformed(evt);
+            }
+        });
         jPanel1.add(btn_lugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, 150, 80));
 
         btn_hora.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/reloj.png"))); // NOI18N
@@ -143,6 +160,11 @@ public class panel_root extends javax.swing.JFrame {
         btn_hora.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_hora.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         btn_hora.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        btn_hora.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_horaActionPerformed(evt);
+            }
+        });
         jPanel1.add(btn_hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 240, 150, 80));
 
         btn_datos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/icBuscar.png"))); // NOI18N
@@ -150,20 +172,35 @@ public class panel_root extends javax.swing.JFrame {
         btn_datos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_datos.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         btn_datos.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jPanel1.add(btn_datos, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 380, 150, 80));
+        btn_datos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_datosActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btn_datos, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 380, 150, 80));
 
         btn_salida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/coche.png"))); // NOI18N
         btn_salida.setText("Salida vehiculos");
         btn_salida.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_salida.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         btn_salida.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jPanel1.add(btn_salida, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 380, 150, 80));
+        btn_salida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_salidaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btn_salida, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 380, 150, 80));
 
         btn_cerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/salir.png"))); // NOI18N
         btn_cerrarSesion.setText("Cerar sesión");
         btn_cerrarSesion.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_cerrarSesion.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         btn_cerrarSesion.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        btn_cerrarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cerrarSesionActionPerformed(evt);
+            }
+        });
         jPanel1.add(btn_cerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 510, 150, 80));
 
         jLabel6.setFont(new java.awt.Font("Lucida Calligraphy", 1, 36)); // NOI18N
@@ -176,6 +213,11 @@ public class panel_root extends javax.swing.JFrame {
         btn_renovacion.setText("Renovacion");
         btn_renovacion.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_renovacion.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        btn_renovacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_renovacionActionPerformed(evt);
+            }
+        });
         jPanel1.add(btn_renovacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 510, 150, 80));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/FondoMenu.jpg"))); // NOI18N
@@ -195,6 +237,55 @@ public class panel_root extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_membresiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_membresiaActionPerformed
+        // TODO add your handling code here:
+        new frm_membresia().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btn_membresiaActionPerformed
+
+    private void btn_datosMembresiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_datosMembresiaActionPerformed
+        // TODO add your handling code here:
+        new csl_membresia().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btn_datosMembresiaActionPerformed
+
+    private void btn_horaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_horaActionPerformed
+        // TODO add your handling code here:
+        new frm_horaFrac().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btn_horaActionPerformed
+
+    private void btn_datosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_datosActionPerformed
+        // TODO add your handling code here:
+        new csl_horaFracc().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btn_datosActionPerformed
+
+    private void btn_lugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_lugarActionPerformed
+        // TODO add your handling code here:
+        new csl_lugar().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btn_lugarActionPerformed
+
+    private void btn_cerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cerrarSesionActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "<---sesión cerrada--->");
+        new Login().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btn_cerrarSesionActionPerformed
+
+    private void btn_salidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salidaActionPerformed
+        // TODO add your handling code here:
+        new salida_vehiculo().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btn_salidaActionPerformed
+
+    private void btn_renovacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_renovacionActionPerformed
+        // TODO add your handling code here:
+        new frm_renovacion().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btn_renovacionActionPerformed
 
     /**
      * @param args the command line arguments
