@@ -53,6 +53,8 @@ public class frm_membresia extends javax.swing.JFrame {
         }else{
               txt_placa.setBackground(new Color(224, 251, 197));
         }
+        
+      
  
 
   
@@ -281,6 +283,8 @@ public class frm_membresia extends javax.swing.JFrame {
         
         txt_placa.setText("");
         txt_propietario.setText("");
+        cb_tipo.setSelectedIndex(-1);
+        cb_marca.setSelectedIndex(-1);
         txt_modelo.setText("");
         txt_color.setText("");
 
