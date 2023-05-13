@@ -36,6 +36,10 @@ public class frm_membresia extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         //tiempo();
         mostrarTiempo();
+        
+         txt_hora.setEditable(false);
+        txt_fecha.setEditable(false);
+        
     }
     
     tiempo tm=new tiempo();
@@ -48,25 +52,51 @@ public class frm_membresia extends javax.swing.JFrame {
     //Metodo para validar datos
     public void validar(){
         
+        //Placa
         if(txt_placa.getText().isEmpty()){
             txt_placa.setBackground(new Color(251, 197, 197));
+            lb_obP1.setText("*Obligatorio");
         }else{
               txt_placa.setBackground(new Color(224, 251, 197));
+               lb_obP1.setText("");
         }
         
-      
- 
-
-  
-         if(txt_placa.getText().isEmpty() 
-           
+        //Propiwtario
+        if(txt_propietario.getText().isEmpty()){
+            txt_propietario.setBackground(new Color(251, 197, 197));
         
-                 ){
-             
+        }else{
+              txt_propietario.setBackground(new Color(224, 251, 197));
+        }
+        //Modelo
+        if(txt_modelo.getText().isEmpty()){
+            txt_modelo.setBackground(new Color(251, 197, 197));
+        }else{
+              txt_modelo.setBackground(new Color(224, 251, 197));
+        }
+        //Color
+         if(txt_color.getText().isEmpty()){
+            txt_color.setBackground(new Color(251, 197, 197));
+        }else{
+              txt_color.setBackground(new Color(224, 251, 197));
+        }
+        //Lugar
+         if(txt_lugar.getText().isEmpty()){
+            txt_lugar.setBackground(new Color(251, 197, 197));
+           
+        }else{
+              txt_lugar.setBackground(new Color(224, 251, 197));
+        }
+
+       if(txt_placa.getText().isEmpty() ||
+            txt_propietario.getText().isEmpty()    ||
+            txt_lugar.getText().isEmpty()  ){
+           
              btn_guardar.setEnabled(false);
          }else{
              btn_guardar.setEnabled(true);
          }
+         
     }
     
     
@@ -106,11 +136,12 @@ public class frm_membresia extends javax.swing.JFrame {
         btn_eliminar = new javax.swing.JButton();
         txt_lugar = new javax.swing.JTextField();
         btn_limpiar = new javax.swing.JButton();
+        lb_obP1 = new javax.swing.JLabel();
         fondo_label = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btn_menu.setText("Menu");
@@ -124,7 +155,7 @@ public class frm_membresia extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Membresia");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 30, 190, 50));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 30, 190, 50));
 
         jLabel2.setBackground(new java.awt.Color(204, 204, 255));
         jLabel2.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
@@ -154,33 +185,51 @@ public class frm_membresia extends javax.swing.JFrame {
         jLabel7.setBackground(new java.awt.Color(204, 204, 255));
         jLabel7.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
         jLabel7.setText("Marca");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 190, -1, 20));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 190, -1, 20));
 
         jLabel8.setBackground(new java.awt.Color(204, 204, 255));
         jLabel8.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
         jLabel8.setText("Modelo");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 240, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 240, -1, -1));
 
         jLabel9.setBackground(new java.awt.Color(204, 204, 255));
         jLabel9.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
         jLabel9.setText("Color");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 290, -1, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 290, -1, -1));
 
         jLabel10.setBackground(new java.awt.Color(204, 204, 255));
         jLabel10.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
         jLabel10.setText("Lugar");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 340, -1, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 340, -1, -1));
 
         txt_placa.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txt_placaKeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txt_placaKeyTyped(evt);
             }
         });
         jPanel1.add(txt_placa, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 132, 200, 30));
+
+        txt_propietario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txt_propietarioKeyReleased(evt);
+            }
+        });
         jPanel1.add(txt_propietario, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 182, 200, 30));
         jPanel1.add(txt_hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 232, 200, 30));
         jPanel1.add(txt_fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 200, 30));
-        jPanel1.add(txt_modelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 230, 200, 30));
+
+        txt_modelo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txt_modeloKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_modeloKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txt_modelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 230, 200, 30));
 
         cb_tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sedan", "Pick up", "Moto" }));
         cb_tipo.addActionListener(new java.awt.event.ActionListener() {
@@ -191,8 +240,22 @@ public class frm_membresia extends javax.swing.JFrame {
         jPanel1.add(cb_tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 330, 200, 30));
 
         cb_marca.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Audi", "BMW", "Cadilac", "Chevrolet", "Chrysler", "Dodge", "Ferrari", "Fiat", "Ford", "Honda", "Hyundai", "Jeep", "Kia", "Mazda", "Mercedes Benz", "Nissan", "Ram", "Renault", "Susuki", "Tesla", "Toyota", "Volkswagen", "Volvo" }));
-        jPanel1.add(cb_marca, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 180, 200, 30));
-        jPanel1.add(txt_color, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 280, 200, 30));
+        cb_marca.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                cb_marcaKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                cb_marcaKeyTyped(evt);
+            }
+        });
+        jPanel1.add(cb_marca, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 180, 200, 30));
+
+        txt_color.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txt_colorKeyReleased(evt);
+            }
+        });
+        jPanel1.add(txt_color, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 280, 200, 30));
 
         btn_tabla.setText("Mostrar tabla");
         btn_tabla.addActionListener(new java.awt.event.ActionListener() {
@@ -200,7 +263,7 @@ public class frm_membresia extends javax.swing.JFrame {
                 btn_tablaActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_tabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 485, 340, 30));
+        jPanel1.add(btn_tabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 490, 430, 30));
 
         btn_guardar.setText("Guardar");
         btn_guardar.addActionListener(new java.awt.event.ActionListener() {
@@ -208,7 +271,7 @@ public class frm_membresia extends javax.swing.JFrame {
                 btn_guardarActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 445, 90, 30));
+        jPanel1.add(btn_guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 450, 90, 30));
 
         btn_modificar.setText("Modificar");
         btn_modificar.addActionListener(new java.awt.event.ActionListener() {
@@ -216,7 +279,7 @@ public class frm_membresia extends javax.swing.JFrame {
                 btn_modificarActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(343, 445, 100, 30));
+        jPanel1.add(btn_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 450, 100, 30));
 
         btn_eliminar.setText("Eliminar");
         btn_eliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -224,8 +287,17 @@ public class frm_membresia extends javax.swing.JFrame {
                 btn_eliminarActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(465, 445, 90, 30));
-        jPanel1.add(txt_lugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 330, 70, 30));
+        jPanel1.add(btn_eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 450, 90, 30));
+
+        txt_lugar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txt_lugarKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_lugarKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txt_lugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 330, 70, 30));
 
         btn_limpiar.setText("Limpiar");
         btn_limpiar.addActionListener(new java.awt.event.ActionListener() {
@@ -233,8 +305,12 @@ public class frm_membresia extends javax.swing.JFrame {
                 btn_limpiarActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 450, -1, -1));
-        jPanel1.add(fondo_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, 540));
+        jPanel1.add(btn_limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 450, 90, 30));
+
+        lb_obP1.setFont(new java.awt.Font("MV Boli", 0, 16)); // NOI18N
+        lb_obP1.setForeground(new java.awt.Color(204, 0, 0));
+        jPanel1.add(lb_obP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 140, 100, 20));
+        jPanel1.add(fondo_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 540));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -264,7 +340,8 @@ public class frm_membresia extends javax.swing.JFrame {
         int modelo=Integer.parseInt(txt_modelo.getText());
         String color=txt_color.getText();
         int lugar=Integer.parseInt(txt_lugar.getText());
-        
+
+    
         JOptionPane.showMessageDialog(null, "Auto registrado");
         
         JOptionPane.showMessageDialog(null, "TICKET"
@@ -281,12 +358,17 @@ public class frm_membresia extends javax.swing.JFrame {
         Auto auto=new Auto(placa, prop, hora, fecha, tipo, marca, modelo, color, lugar);
         contenedorMembresia.add(auto);
         
+        //Se limpian los campos
         txt_placa.setText("");
         txt_propietario.setText("");
-        cb_tipo.setSelectedIndex(-1);
-        cb_marca.setSelectedIndex(-1);
+        
+        txt_hora.setText(tm.horaFormateada);
+        txt_fecha.setText(tm.fechaFormateada);
+        
         txt_modelo.setText("");
         txt_color.setText("");
+        txt_lugar.setText("");
+    
 
     }//GEN-LAST:event_btn_guardarActionPerformed
 
@@ -335,6 +417,7 @@ public class frm_membresia extends javax.swing.JFrame {
         Auto auto=new Auto(placa, prop, hora, fecha, tipo, marca, modelo, color, lugar);
         contenedorMembresia.set(buscar, auto);
         
+            //Se limpian los campos
         txt_placa.setText("");
         txt_propietario.setText("");
         
@@ -351,6 +434,8 @@ public class frm_membresia extends javax.swing.JFrame {
         contenedorMembresia.remove(buscar);
         
         JOptionPane.showMessageDialog(null, "Auto eliminado");
+        
+            //Se limpian los campos
         txt_placa.setText("");
         txt_propietario.setText("");
         
@@ -380,8 +465,77 @@ public class frm_membresia extends javax.swing.JFrame {
 
     private void btn_limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_limpiarActionPerformed
         // TODO add your handling code here:
-        cb_marca.setSelectedIndex(-1);
+        
+       lb_obP1.setText("");
+        txt_placa.setText("");
+        txt_propietario.setText("");
+        
+        txt_hora.setText(tm.horaFormateada);
+        txt_fecha.setText(tm.fechaFormateada);
+        
+        txt_modelo.setText("");
+        txt_color.setText("");
+        txt_lugar.setText("");
     }//GEN-LAST:event_btn_limpiarActionPerformed
+
+    private void txt_placaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_placaKeyReleased
+        // TODO add your handling code here:
+         validar();
+    }//GEN-LAST:event_txt_placaKeyReleased
+
+    private void cb_marcaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cb_marcaKeyReleased
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_cb_marcaKeyReleased
+
+    private void cb_marcaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cb_marcaKeyTyped
+        // TODO add your handling code here:
+   
+    }//GEN-LAST:event_cb_marcaKeyTyped
+
+    private void txt_propietarioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_propietarioKeyReleased
+        // TODO add your handling code here:
+        validar();
+    }//GEN-LAST:event_txt_propietarioKeyReleased
+
+    private void txt_modeloKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_modeloKeyReleased
+        // TODO add your handling code here:
+        validar();
+    }//GEN-LAST:event_txt_modeloKeyReleased
+
+    private void txt_colorKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_colorKeyReleased
+        // TODO add your handling code here:
+        validar();
+    }//GEN-LAST:event_txt_colorKeyReleased
+
+    private void txt_lugarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_lugarKeyReleased
+        // TODO add your handling code here:
+        validar();
+    }//GEN-LAST:event_txt_lugarKeyReleased
+
+    private void txt_lugarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_lugarKeyTyped
+        // TODO add your handling code here:
+        char validar=evt.getKeyChar();
+        
+        if(Character.isLetter((validar))){
+            getToolkit().beep();
+            evt.consume();
+            
+            JOptionPane.showMessageDialog(rootPane, "Ingrese solo numeros");
+        }
+    }//GEN-LAST:event_txt_lugarKeyTyped
+
+    private void txt_modeloKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_modeloKeyTyped
+        // TODO add your handling code here:
+        char validar=evt.getKeyChar();
+        
+        if(Character.isLetter((validar))){
+            getToolkit().beep();
+            evt.consume();
+            
+            JOptionPane.showMessageDialog(rootPane, "Ingrese solo numeros");
+        }
+    }//GEN-LAST:event_txt_modeloKeyTyped
 
     /**
      * @param args the command line arguments
@@ -439,6 +593,7 @@ public class frm_membresia extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lb_obP1;
     private javax.swing.JTextField txt_color;
     private javax.swing.JTextField txt_fecha;
     private javax.swing.JTextField txt_hora;
