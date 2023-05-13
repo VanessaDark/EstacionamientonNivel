@@ -60,13 +60,13 @@ public class panel_admin extends javax.swing.JFrame {
         lb_fecha = new javax.swing.JLabel();
         lb_hora = new javax.swing.JLabel();
         jButton8 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        btn_membresia = new javax.swing.JButton();
+        btn_lugar = new javax.swing.JButton();
+        btn_hora = new javax.swing.JButton();
+        btn_salidaVehiculo = new javax.swing.JButton();
+        btn_cerrarSesion = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jButton9 = new javax.swing.JButton();
+        btn_renovacion = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -84,7 +84,7 @@ public class panel_admin extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("NSimSun", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(204, 204, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Usuario Root");
+        jLabel3.setText("Usuario Admin");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 160, 28));
 
         jLabel4.setFont(new java.awt.Font("Perpetua", 1, 18)); // NOI18N
@@ -112,45 +112,75 @@ public class panel_admin extends javax.swing.JFrame {
 
         jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/Manual.png"))); // NOI18N
         jButton8.setText("Menu");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
         jPanel2.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 490, 130, 50));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 0, 280, 650));
 
-        jButton1.setBackground(new java.awt.Color(153, 255, 153));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/carroAgr.png"))); // NOI18N
-        jButton1.setText("Membresia");
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 150, 80));
+        btn_membresia.setBackground(new java.awt.Color(153, 255, 153));
+        btn_membresia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/carroAgr.png"))); // NOI18N
+        btn_membresia.setText("Membresia");
+        btn_membresia.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btn_membresia.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        btn_membresia.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        btn_membresia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_membresiaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btn_membresia, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 150, 80));
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/Lugar.png"))); // NOI18N
-        jButton3.setText("Lugar");
-        jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jButton3.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, 150, 80));
+        btn_lugar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/Lugar.png"))); // NOI18N
+        btn_lugar.setText("Lugar");
+        btn_lugar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btn_lugar.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        btn_lugar.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        btn_lugar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_lugarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btn_lugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, 150, 80));
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/reloj.png"))); // NOI18N
-        jButton4.setText("Hora");
-        jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jButton4.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, 150, 80));
+        btn_hora.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/reloj.png"))); // NOI18N
+        btn_hora.setText("Hora");
+        btn_hora.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btn_hora.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        btn_hora.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        btn_hora.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_horaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btn_hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, 150, 80));
 
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/coche.png"))); // NOI18N
-        jButton6.setText("Salida vehiculos");
-        jButton6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton6.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jButton6.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 250, 150, 80));
+        btn_salidaVehiculo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/coche.png"))); // NOI18N
+        btn_salidaVehiculo.setText("Salida vehiculos");
+        btn_salidaVehiculo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btn_salidaVehiculo.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        btn_salidaVehiculo.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        btn_salidaVehiculo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_salidaVehiculoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btn_salidaVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 250, 150, 80));
 
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/salir.png"))); // NOI18N
-        jButton7.setText("Cerar sesión");
-        jButton7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton7.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jButton7.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 400, 150, 80));
+        btn_cerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/salir.png"))); // NOI18N
+        btn_cerrarSesion.setText("Cerar sesión");
+        btn_cerrarSesion.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btn_cerrarSesion.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        btn_cerrarSesion.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        btn_cerrarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cerrarSesionActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btn_cerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 400, 150, 80));
 
         jLabel6.setFont(new java.awt.Font("Lucida Calligraphy", 1, 36)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(204, 255, 204));
@@ -158,11 +188,16 @@ public class panel_admin extends javax.swing.JFrame {
         jLabel6.setText("Menu");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, 150, -1));
 
-        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/renovacion.png"))); // NOI18N
-        jButton9.setText("Renovacion");
-        jButton9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton9.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jPanel1.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 400, 150, 80));
+        btn_renovacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/renovacion.png"))); // NOI18N
+        btn_renovacion.setText("Renovacion");
+        btn_renovacion.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btn_renovacion.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        btn_renovacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_renovacionActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btn_renovacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 400, 150, 80));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/FondoMenu.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -181,6 +216,53 @@ public class panel_admin extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_membresiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_membresiaActionPerformed
+        // TODO add your handling code here:
+        new frm_membresia().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btn_membresiaActionPerformed
+
+    private void btn_horaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_horaActionPerformed
+        // TODO add your handling code here:
+        new frm_horaFrac().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btn_horaActionPerformed
+
+    private void btn_lugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_lugarActionPerformed
+        // TODO add your handling code here:
+        new csl_lugar().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btn_lugarActionPerformed
+
+    private void btn_salidaVehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salidaVehiculoActionPerformed
+        // TODO add your handling code here:
+        new salida_vehiculo().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btn_salidaVehiculoActionPerformed
+
+    private void btn_renovacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_renovacionActionPerformed
+        // TODO add your handling code here:
+        new frm_renovacion().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btn_renovacionActionPerformed
+
+    private void btn_cerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cerrarSesionActionPerformed
+        // TODO add your handling code here:
+        new login_admin().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btn_cerrarSesionActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+        try {
+            String url="C:\\Users\\vanes\\OneDrive\\Escritorio\\POO\\Manual_ParkCar.pdf";
+            ProcessBuilder p=new ProcessBuilder();
+            p.command("cmd.exe","/c",url);
+            p.start();
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_jButton8ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -221,13 +303,13 @@ public class panel_admin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
+    private javax.swing.JButton btn_cerrarSesion;
+    private javax.swing.JButton btn_hora;
+    private javax.swing.JButton btn_lugar;
+    private javax.swing.JButton btn_membresia;
+    private javax.swing.JButton btn_renovacion;
+    private javax.swing.JButton btn_salidaVehiculo;
     private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

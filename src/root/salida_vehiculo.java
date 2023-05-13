@@ -9,6 +9,7 @@ import clases.Auto;
 import clases.tiempo;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.JOptionPane;
 import javax.swing.Timer;
 /**
  *
@@ -21,6 +22,9 @@ public class salida_vehiculo extends javax.swing.JFrame {
     
     public salida_vehiculo() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        CargarInterfaz();
+        CargarDatos();
         mostrarTiempo();
     }
     
@@ -33,7 +37,7 @@ public class salida_vehiculo extends javax.swing.JFrame {
     
     public void CargarInterfaz(){
         String datos[][]={};
-        String columna[]={"Hora","Fecha","Placa","Lugar","Disponibilidad"};
+        String columna[]={"Placa","Hora","Fecha","Lugar"};
         modelo=new DefaultTableModel(datos,columna);
         tb_salida.setModel(modelo);
     }
@@ -124,6 +128,11 @@ public class salida_vehiculo extends javax.swing.JFrame {
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, -1, -1));
 
         btn_calcular.setText("Calcular");
+        btn_calcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_calcularActionPerformed(evt);
+            }
+        });
         jPanel2.add(btn_calcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 90, 30));
 
         btn_pagar.setText("Pagar");
@@ -197,6 +206,23 @@ public class salida_vehiculo extends javax.swing.JFrame {
 
     private void btn_pagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pagarActionPerformed
         // TODO add your handling code here:
+       JOptionPane.showMessageDialog(null, "TICKET"
+                + "\nPlaca: "+txt_placa.getText()
+                +"\nEntrada: "+txt_entrada.getText()
+                +"\nSalida: "+txt_salida.getText()
+                +"\nFecha"+txt_fecha.getText()
+                +"\nLugar"+Integer.parseInt(txt_lugar.getText())
+                +"\nTota: "+txt_costo.getText());
+    }//GEN-LAST:event_btn_pagarActionPerformed
+
+    private void btn_menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_menuActionPerformed
+        // TODO add your handling code here:
+        new panel_root().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btn_menuActionPerformed
+
+    private void btn_calcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_calcularActionPerformed
+        // TODO add your handling code here:
         String entradaStr=this.txt_entrada.getText();
         String salidaStr= this.txt_salida.getText();
         
@@ -237,13 +263,7 @@ public class salida_vehiculo extends javax.swing.JFrame {
          
          double total=horas*15;
          txt_costo.setText("$ "+total);
-    }//GEN-LAST:event_btn_pagarActionPerformed
-
-    private void btn_menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_menuActionPerformed
-        // TODO add your handling code here:
-        new panel_root().setVisible(true);
-        dispose();
-    }//GEN-LAST:event_btn_menuActionPerformed
+    }//GEN-LAST:event_btn_calcularActionPerformed
 
     /**
      * @param args the command line arguments

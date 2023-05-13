@@ -8,6 +8,7 @@ import java.util.LinkedList;
 import clases.Auto;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.JOptionPane;
 import javax.swing.Timer;
 import static root.frm_membresia.contenedorMembresia;
 /**
@@ -51,14 +52,16 @@ public class frm_renovacion extends javax.swing.JFrame {
         txt_modelo = new javax.swing.JTextField();
         txt_color = new javax.swing.JTextField();
         cb_marca = new javax.swing.JComboBox<>();
-        sp_lugar = new javax.swing.JSpinner();
         jLabel10 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         btn_tabla = new javax.swing.JButton();
         btn_gurdar = new javax.swing.JButton();
+        txt_lugar = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(204, 153, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setText("Menu");
@@ -69,32 +72,41 @@ public class frm_renovacion extends javax.swing.JFrame {
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 31, -1, -1));
 
+        jLabel1.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         jLabel1.setText("Placa");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, -1, -1));
 
+        jLabel2.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         jLabel2.setText("Propietario");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, -1, -1));
 
+        jLabel3.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         jLabel3.setText("Hora");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, -1, -1));
 
+        jLabel4.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         jLabel4.setText("Fecha");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, -1, -1));
 
+        jLabel5.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         jLabel5.setText("Tipo");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 370, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 370, -1, -1));
 
+        jLabel6.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         jLabel6.setText("Marca");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 200, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 200, -1, -1));
 
+        jLabel7.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         jLabel7.setText("Modelo");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 250, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 250, -1, -1));
 
+        jLabel8.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         jLabel8.setText("Color");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 310, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 310, -1, -1));
 
+        jLabel9.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         jLabel9.setText("Lugar");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 370, -1, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 370, -1, -1));
 
         txt_placa.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -113,7 +125,6 @@ public class frm_renovacion extends javax.swing.JFrame {
 
         cb_marca.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Audi", "BMW", "Cadilac", "Chevrolet", "Chrysler", "Dodge", "Ferrari", "Fiat", "Ford", "Honda", "Hyundai", "Jeep", "Kia", "Mazda", "Mercedes Benz", "Nissan", "Ram", "Renault", "Susuki", "Tesla", "Toyota", "Volkswagen", "Volvo" }));
         jPanel1.add(cb_marca, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 190, 200, 30));
-        jPanel1.add(sp_lugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 362, 90, 30));
 
         jLabel10.setFont(new java.awt.Font("Rockwell", 0, 18)); // NOI18N
         jLabel10.setText("Renovacion (Membresias)");
@@ -127,7 +138,7 @@ public class frm_renovacion extends javax.swing.JFrame {
                 btn_tablaActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_tabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 470, 150, -1));
+        jPanel1.add(btn_tabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 470, 150, -1));
 
         btn_gurdar.setText("Guardar");
         btn_gurdar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -136,7 +147,11 @@ public class frm_renovacion extends javax.swing.JFrame {
                 btn_gurdarActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_gurdar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 470, 150, -1));
+        jPanel1.add(btn_gurdar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 470, 150, -1));
+
+        txt_lugar.setText("jTextField1");
+        jPanel1.add(txt_lugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 360, 100, 30));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 540));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -164,7 +179,18 @@ public class frm_renovacion extends javax.swing.JFrame {
         String marca=cb_marca.getSelectedItem().toString();
         int modelo=Integer.parseInt(txt_modelo.getText());
         String color=txt_color.getText();
-        int lugar=Integer.parseInt(sp_lugar.getValue().toString());
+        int lugar=Integer.parseInt(txt_lugar.getText());
+        
+        JOptionPane.showMessageDialog(null, "TICKET RENOVACION"
+                + "\nPlaca"+txt_placa.getText()
+                +"\nPropietario"+txt_propietario.getText()
+                +"\nHora"+txt_hora.getText()
+                +"\nFecha"+txt_fecha.getText()
+                +"\nTipo"+cb_tipo.getSelectedItem().toString()
+                +"\nMarca"+cb_marca.getSelectedItem().toString()
+                +"\nModelo"+Integer.parseInt(txt_modelo.getText())
+                +"\nColor"+txt_color.getText()
+                +"\nLugar"+Integer.parseInt(txt_lugar.getText()));
         
         Auto auto=new Auto(placa, prop, hora, fecha, tipo, marca, modelo, color, lugar);
         contenedorMembresia.set(buscar, auto);
@@ -205,7 +231,8 @@ public class frm_renovacion extends javax.swing.JFrame {
                     txt_fecha.setText(a.getFecha());
                     cb_tipo.setSelectedItem(a.getTipo());
                     cb_marca.setSelectedItem(a.getMarca());
-                    sp_lugar.setValue(a.getModelo());
+                    txt_modelo.setText(Integer.toString(a.getModelo()));
+                     txt_lugar.setText(Integer.toString(a.getLugar()));
                     txt_color.setText(a.getColor());
                     
                     buscar=i;
@@ -273,6 +300,7 @@ public class frm_renovacion extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -283,10 +311,10 @@ public class frm_renovacion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSpinner sp_lugar;
     private javax.swing.JTextField txt_color;
     private javax.swing.JTextField txt_fecha;
     private javax.swing.JTextField txt_hora;
+    private javax.swing.JTextField txt_lugar;
     private javax.swing.JTextField txt_modelo;
     private javax.swing.JTextField txt_placa;
     private javax.swing.JTextField txt_propietario;

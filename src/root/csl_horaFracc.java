@@ -56,9 +56,11 @@ public class csl_horaFracc extends javax.swing.JFrame {
         btn_salir = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tb_horafrac = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(255, 204, 153));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btn_menu.setText("Menu");
@@ -70,7 +72,12 @@ public class csl_horaFracc extends javax.swing.JFrame {
         jPanel1.add(btn_menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 70, -1));
 
         btn_salir.setText("Salir");
-        jPanel1.add(btn_salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(705, 40, 80, -1));
+        btn_salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_salirActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btn_salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 40, 80, -1));
 
         tb_horafrac.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -86,12 +93,15 @@ public class csl_horaFracc extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tb_horafrac);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 720, 220));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 510));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 809, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -106,6 +116,11 @@ public class csl_horaFracc extends javax.swing.JFrame {
         new panel_root().setVisible(true);
         dispose();
     }//GEN-LAST:event_btn_menuActionPerformed
+
+    private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_btn_salirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -145,6 +160,7 @@ public class csl_horaFracc extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_menu;
     private javax.swing.JButton btn_salir;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tb_horafrac;

@@ -18,6 +18,9 @@ public class csl_lugar extends javax.swing.JFrame {
     
     public csl_lugar() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        CargarInterfaz();
+        CargarDatos();
     }
     
     public void CargarInterfaz(){
@@ -36,7 +39,8 @@ public class csl_lugar extends javax.swing.JFrame {
             modelo.insertRow(contador,new Object[]{});
             modelo.setValueAt(a.getPlaca(),contador, 0);
             modelo.setValueAt(a.getHora(),contador, 1);
-            modelo.setValueAt(a.getLugar(),contador, 2);
+            modelo.setValueAt(a.getFecha(),contador, 2);
+            modelo.setValueAt(a.getLugar(),contador, 3);
           
         
         }
@@ -70,9 +74,11 @@ public class csl_lugar extends javax.swing.JFrame {
         pane_6 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tb_lugar.setModel(new javax.swing.table.DefaultTableModel(
@@ -91,6 +97,8 @@ public class csl_lugar extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tb_lugar);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 172, -1, 173));
+
+        txt_lugar.setBackground(new java.awt.Color(255, 204, 204));
         jPanel1.add(txt_lugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, 60, 30));
 
         jButton1.setBackground(new java.awt.Color(204, 204, 255));
@@ -267,6 +275,7 @@ public class csl_lugar extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 70, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 450));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -278,7 +287,7 @@ public class csl_lugar extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 452, Short.MAX_VALUE)
         );
 
         pack();
@@ -287,7 +296,7 @@ public class csl_lugar extends javax.swing.JFrame {
     private void tb_lugarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb_lugarMouseClicked
         // TODO add your handling code here:
         int seleccionar = tb_lugar.rowAtPoint(evt.getPoint());
-        txt_lugar.setText(String.valueOf(tb_lugar.getValueAt(seleccionar, 1)));
+        txt_lugar.setText(String.valueOf(tb_lugar.getValueAt(seleccionar, 3)));
     }//GEN-LAST:event_tb_lugarMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -365,6 +374,7 @@ public class csl_lugar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;

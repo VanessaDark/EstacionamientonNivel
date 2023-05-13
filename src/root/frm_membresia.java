@@ -6,9 +6,19 @@ package root;
 
 import clases.Auto;
 import clases.tiempo;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.print.PageFormat;
+import java.awt.print.Printable;
+import static java.awt.print.Printable.NO_SUCH_PAGE;
+import static java.awt.print.Printable.PAGE_EXISTS;
+import java.awt.print.PrinterException;
+import java.awt.print.PrinterJob;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.LinkedList;
+import javax.swing.JOptionPane;
 import javax.swing.Timer;
 
 /**
@@ -35,6 +45,29 @@ public class frm_membresia extends javax.swing.JFrame {
          txt_fecha.setText(tm.fechaFormateada);
     }
     
+    //Metodo para validar datos
+    public void validar(){
+        
+        if(txt_placa.getText().isEmpty()){
+            txt_placa.setBackground(new Color(251, 197, 197));
+        }else{
+              txt_placa.setBackground(new Color(224, 251, 197));
+        }
+ 
+
+  
+         if(txt_placa.getText().isEmpty() 
+           
+        
+                 ){
+             
+             btn_guardar.setEnabled(false);
+         }else{
+             btn_guardar.setEnabled(true);
+         }
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -48,7 +81,6 @@ public class frm_membresia extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         btn_menu = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -71,9 +103,12 @@ public class frm_membresia extends javax.swing.JFrame {
         btn_modificar = new javax.swing.JButton();
         btn_eliminar = new javax.swing.JButton();
         txt_lugar = new javax.swing.JTextField();
+        btn_limpiar = new javax.swing.JButton();
+        fondo_label = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(255, 204, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btn_menu.setText("Menu");
@@ -87,44 +122,50 @@ public class frm_membresia extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Membresia");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 40, 190, 50));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 30, 190, 50));
 
-        jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 780, 30));
-
-        jLabel2.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
+        jLabel2.setBackground(new java.awt.Color(204, 204, 255));
+        jLabel2.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
         jLabel2.setText("Placa");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 80, 30));
 
-        jLabel3.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
+        jLabel3.setBackground(new java.awt.Color(204, 204, 255));
+        jLabel3.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
         jLabel3.setText("Propietario");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
+        jLabel4.setBackground(new java.awt.Color(204, 204, 255));
+        jLabel4.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
         jLabel4.setText("Hora");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, -1, -1));
 
-        jLabel5.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
+        jLabel5.setBackground(new java.awt.Color(204, 204, 255));
+        jLabel5.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
         jLabel5.setText("Fecha");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, -1, -1));
 
-        jLabel6.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
+        jLabel6.setBackground(new java.awt.Color(204, 204, 255));
+        jLabel6.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
         jLabel6.setText("Tipo");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, -1, -1));
 
-        jLabel7.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
+        jLabel7.setBackground(new java.awt.Color(204, 204, 255));
+        jLabel7.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
         jLabel7.setText("Marca");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 190, -1, 20));
 
-        jLabel8.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
+        jLabel8.setBackground(new java.awt.Color(204, 204, 255));
+        jLabel8.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
         jLabel8.setText("Modelo");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 240, -1, -1));
 
-        jLabel9.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
+        jLabel9.setBackground(new java.awt.Color(204, 204, 255));
+        jLabel9.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
         jLabel9.setText("Color");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 290, -1, -1));
 
-        jLabel10.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
+        jLabel10.setBackground(new java.awt.Color(204, 204, 255));
+        jLabel10.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
         jLabel10.setText("Lugar");
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 340, -1, -1));
 
@@ -184,6 +225,15 @@ public class frm_membresia extends javax.swing.JFrame {
         jPanel1.add(btn_eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(465, 445, 90, 30));
         jPanel1.add(txt_lugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 330, 70, 30));
 
+        btn_limpiar.setText("Limpiar");
+        btn_limpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_limpiarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btn_limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 450, -1, -1));
+        jPanel1.add(fondo_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, 540));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -212,6 +262,19 @@ public class frm_membresia extends javax.swing.JFrame {
         int modelo=Integer.parseInt(txt_modelo.getText());
         String color=txt_color.getText();
         int lugar=Integer.parseInt(txt_lugar.getText());
+        
+        JOptionPane.showMessageDialog(null, "Auto registrado");
+        
+        JOptionPane.showMessageDialog(null, "TICKET"
+                + "\nPlaca"+txt_placa.getText()
+                +"\nPropietario"+txt_propietario.getText()
+                +"\nHora"+txt_hora.getText()
+                +"\nFecha"+txt_fecha.getText()
+                +"\nTipo"+cb_tipo.getSelectedItem().toString()
+                +"\nMarca"+cb_marca.getSelectedItem().toString()
+                +"\nModelo"+Integer.parseInt(txt_modelo.getText())
+                +"\nColor"+txt_color.getText()
+                +"\nLugar"+Integer.parseInt(txt_lugar.getText()));
         
         Auto auto=new Auto(placa, prop, hora, fecha, tipo, marca, modelo, color, lugar);
         contenedorMembresia.add(auto);
@@ -263,6 +326,8 @@ public class frm_membresia extends javax.swing.JFrame {
         String color=txt_color.getText();
         int lugar=Integer.parseInt(txt_lugar.getText());
         
+        JOptionPane.showMessageDialog(null, "Auto modificado");
+        
         Auto auto=new Auto(placa, prop, hora, fecha, tipo, marca, modelo, color, lugar);
         contenedorMembresia.set(buscar, auto);
         
@@ -281,6 +346,7 @@ public class frm_membresia extends javax.swing.JFrame {
         // TODO add your handling code here:
         contenedorMembresia.remove(buscar);
         
+        JOptionPane.showMessageDialog(null, "Auto eliminado");
         txt_placa.setText("");
         txt_propietario.setText("");
         
@@ -307,6 +373,11 @@ public class frm_membresia extends javax.swing.JFrame {
         new csl_membresia().setVisible(true);
         dispose();
     }//GEN-LAST:event_btn_tablaActionPerformed
+
+    private void btn_limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_limpiarActionPerformed
+        // TODO add your handling code here:
+        cb_marca.setSelectedIndex(-1);
+    }//GEN-LAST:event_btn_limpiarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -346,11 +417,13 @@ public class frm_membresia extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_eliminar;
     private javax.swing.JButton btn_guardar;
+    private javax.swing.JButton btn_limpiar;
     private javax.swing.JButton btn_menu;
     private javax.swing.JButton btn_modificar;
     private javax.swing.JButton btn_tabla;
     private javax.swing.JComboBox<String> cb_marca;
     private javax.swing.JComboBox<String> cb_tipo;
+    private javax.swing.JLabel fondo_label;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -362,7 +435,6 @@ public class frm_membresia extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField txt_color;
     private javax.swing.JTextField txt_fecha;
     private javax.swing.JTextField txt_hora;

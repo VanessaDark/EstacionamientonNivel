@@ -41,7 +41,6 @@ public class login_root extends javax.swing.JFrame {
 
         root = new javax.swing.JPanel();
         logo = new javax.swing.JLabel();
-        logoname = new javax.swing.JLabel();
         citybg = new javax.swing.JLabel();
         header = new javax.swing.JPanel();
         exitBtn = new javax.swing.JPanel();
@@ -69,19 +68,12 @@ public class login_root extends javax.swing.JFrame {
         root.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/logo.png"))); // NOI18N
-        root.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 90, 290, 140));
-
-        logoname.setBackground(new java.awt.Color(255, 255, 255));
-        logoname.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
-        logoname.setForeground(new java.awt.Color(255, 255, 255));
-        logoname.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        logoname.setText("NOMBRE EMPRESA");
-        root.add(logoname, new org.netbeans.lib.awtextra.AbsoluteConstraints(554, 250, 290, 20));
+        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/park1.png"))); // NOI18N
+        root.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 170, 290, 140));
 
         citybg.setBackground(new java.awt.Color(0, 134, 190));
-        citybg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/city.png"))); // NOI18N
-        root.add(citybg, new org.netbeans.lib.awtextra.AbsoluteConstraints(548, 0, -1, 500));
+        citybg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/flog.png"))); // NOI18N
+        root.add(citybg, new org.netbeans.lib.awtextra.AbsoluteConstraints(548, 0, 400, 500));
 
         header.setBackground(new java.awt.Color(255, 255, 255));
         header.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -147,8 +139,9 @@ public class login_root extends javax.swing.JFrame {
         logaoutrootLayout.setHorizontalGroup(
             logaoutrootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, logaoutrootLayout.createSequentialGroup()
-                .addGap(0, 8, Short.MAX_VALUE)
-                .addComponent(log_out_root))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(log_out_root)
+                .addContainerGap())
         );
         logaoutrootLayout.setVerticalGroup(
             logaoutrootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -166,7 +159,7 @@ public class login_root extends javax.swing.JFrame {
                 .addComponent(exitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(logaoutroot, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 717, Short.MAX_VALUE))
+                .addGap(0, 715, Short.MAX_VALUE))
         );
         headerLayout.setVerticalGroup(
             headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -177,7 +170,7 @@ public class login_root extends javax.swing.JFrame {
         root.add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 40));
 
         favicon.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
-        favicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/favicon.png"))); // NOI18N
+        favicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/coche.png"))); // NOI18N
         favicon.setText("LOGO");
         root.add(favicon, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, -1, -1));
 
@@ -251,15 +244,15 @@ public class login_root extends javax.swing.JFrame {
         );
 
         root.add(loginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 130, 40));
-
-        mensaje.setText("jLabel1");
         root.add(mensaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 400, 130, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(root, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(root, javax.swing.GroupLayout.PREFERRED_SIZE, 833, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 1, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -336,6 +329,7 @@ public class login_root extends javax.swing.JFrame {
                 //message.setText("Excediste el número de intentos. Espera 10 segundos.");
                 loginBtnTxt.setEnabled(false);
                 mensaje.setText("Bloqueado");
+                
 
                 // Esperar 10 segundos antes de habilitar el botón de nuevo
                 new Thread(() -> {
@@ -427,7 +421,6 @@ public class login_root extends javax.swing.JFrame {
     private javax.swing.JPanel loginBtn;
     private javax.swing.JLabel loginBtnTxt;
     private javax.swing.JLabel logo;
-    private javax.swing.JLabel logoname;
     private javax.swing.JLabel mensaje;
     private javax.swing.JLabel passLabel;
     private javax.swing.JPasswordField passTxt;

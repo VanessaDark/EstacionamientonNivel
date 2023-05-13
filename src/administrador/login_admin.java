@@ -42,7 +42,6 @@ public class login_admin extends javax.swing.JFrame {
 
         root = new javax.swing.JPanel();
         logo = new javax.swing.JLabel();
-        logoname = new javax.swing.JLabel();
         citybg = new javax.swing.JLabel();
         header = new javax.swing.JPanel();
         exitBtn = new javax.swing.JPanel();
@@ -59,6 +58,7 @@ public class login_admin extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JSeparator();
         loginBtn = new javax.swing.JPanel();
         loginBtnTxt = new javax.swing.JLabel();
+        mensaje = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -68,19 +68,13 @@ public class login_admin extends javax.swing.JFrame {
         root.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/logo.png"))); // NOI18N
-        root.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 90, 290, 140));
-
-        logoname.setBackground(new java.awt.Color(255, 255, 255));
-        logoname.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
-        logoname.setForeground(new java.awt.Color(255, 255, 255));
-        logoname.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        logoname.setText("NOMBRE EMPRESA");
-        root.add(logoname, new org.netbeans.lib.awtextra.AbsoluteConstraints(554, 250, 290, 20));
+        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/park1.png"))); // NOI18N
+        root.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 160, 290, 140));
 
         citybg.setBackground(new java.awt.Color(0, 134, 190));
-        citybg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/city.png"))); // NOI18N
-        root.add(citybg, new org.netbeans.lib.awtextra.AbsoluteConstraints(548, 0, -1, 500));
+        citybg.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        citybg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/flog.png"))); // NOI18N
+        root.add(citybg, new org.netbeans.lib.awtextra.AbsoluteConstraints(548, 0, 280, 500));
 
         header.setBackground(new java.awt.Color(255, 255, 255));
         header.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -176,8 +170,8 @@ public class login_admin extends javax.swing.JFrame {
         root.add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 40));
 
         favicon.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
-        favicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/favicon.png"))); // NOI18N
-        favicon.setText("LOGO");
+        favicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/coche.png"))); // NOI18N
+        favicon.setText("ParkCar");
         root.add(favicon, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, -1, -1));
 
         title.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
@@ -250,6 +244,7 @@ public class login_admin extends javax.swing.JFrame {
         );
 
         root.add(loginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 130, 40));
+        root.add(mensaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 400, 170, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -344,6 +339,7 @@ public class login_admin extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Excediste el número de intentos. Espera 10 segundos.");
                 //message.setText("Excediste el número de intentos. Espera 10 segundos.");
                 loginBtnTxt.setEnabled(false);
+                mensaje.setText("Bloqueado");
 
                 // Esperar 10 segundos antes de habilitar el botón de nuevo
                 new Thread(() -> {
@@ -354,6 +350,7 @@ public class login_admin extends javax.swing.JFrame {
                     }
                     counter = 0;
                     //message.setText("");
+                    mensaje.setText("Desbloqueado");
                     loginBtnTxt.setEnabled(true);
                 }).start();
             }
@@ -420,7 +417,7 @@ public class login_admin extends javax.swing.JFrame {
     private javax.swing.JPanel loginBtn;
     private javax.swing.JLabel loginBtnTxt;
     private javax.swing.JLabel logo;
-    private javax.swing.JLabel logoname;
+    private javax.swing.JLabel mensaje;
     private javax.swing.JLabel passLabel;
     private javax.swing.JPasswordField passTxt;
     private javax.swing.JPanel root;
