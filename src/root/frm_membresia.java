@@ -9,6 +9,7 @@ import clases.tiempo;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Toolkit;
 import java.awt.print.PageFormat;
 import java.awt.print.Printable;
 import static java.awt.print.Printable.NO_SUCH_PAGE;
@@ -395,7 +396,14 @@ public class frm_membresia extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_guardarActionPerformed
 
     private void txt_placaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_placaKeyTyped
-        // TODO add your handling code here:
+ 
+         //Limita la cantidad de carracteres (QWE-789-Q)
+        if(txt_placa.getText().length()>=9){
+            evt.consume();
+            Toolkit.getDefaultToolkit().beep();
+        }
+        
+        //Busca los valores de los demas campos
         int press=evt.getKeyChar();
         if(press==10){
             String idEncontrado=txt_placa.getText().trim();

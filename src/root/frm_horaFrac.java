@@ -7,9 +7,11 @@ package root;
 import clases.Auto;
 import clases.tiempo;
 import java.awt.Color;
+import java.awt.Toolkit;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.LinkedList;
+import javax.swing.JOptionPane;
 import javax.swing.Timer;
 
 /**
@@ -25,6 +27,8 @@ public class frm_horaFrac extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         mostrarTiempo();
+        txt_hora.setEditable(false);
+        txt_fecha.setEditable(false);
     }
      tiempo tm=new tiempo();
     public void mostrarTiempo(){
@@ -54,7 +58,38 @@ public class frm_horaFrac extends javax.swing.JFrame {
             this.pane_6.setBackground(Color.red);
        } 
        
-    }      
+    }   
+    
+    public void validar(){
+        //Placa
+         if(txt_placa.getText().isEmpty()){
+            txt_placa.setBackground(new Color(251, 197, 197));
+            lb_obligatorioP.setText("*Obligatorio");
+           
+        }else{
+              txt_placa.setBackground(new Color(224, 251, 197));
+              lb_obligatorioP.setText("");
+        }
+        
+        //Lugar
+         if(txt_lugar.getText().isEmpty()){
+            txt_lugar.setBackground(new Color(251, 197, 197));
+            lb_obligatorioL.setText("*Obligatorio");
+           
+        }else{
+              txt_lugar.setBackground(new Color(224, 251, 197));
+               lb_obligatorioL.setText("");
+        }
+        
+        if(txt_placa.getText().isEmpty() ||
+            txt_lugar.getText().isEmpty()  ){
+           
+             btn_guardar.setEnabled(false);
+         }else{
+             btn_guardar.setEnabled(true);
+         }
+        
+    }
     
 
     /**
@@ -95,7 +130,9 @@ public class frm_horaFrac extends javax.swing.JFrame {
         txt_hora = new javax.swing.JTextField();
         txt_fecha = new javax.swing.JTextField();
         txt_lugar = new javax.swing.JTextField();
-        jLabel12 = new javax.swing.JLabel();
+        lb_obligatorioP = new javax.swing.JLabel();
+        lb_obligatorioL = new javax.swing.JLabel();
+        lb_fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -108,7 +145,7 @@ public class frm_horaFrac extends javax.swing.JFrame {
                 btn_menuActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
+        jPanel1.add(btn_menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 50, 90, 30));
 
         jPanel2.setBackground(new java.awt.Color(126, 190, 247));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -245,27 +282,28 @@ public class frm_horaFrac extends javax.swing.JFrame {
 
         jPanel2.add(pane_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, -1, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 80, 320, 360));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 150, 320, 360));
 
-        jLabel7.setFont(new java.awt.Font("OCR A Extended", 1, 18)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("OCR A Extended", 1, 20)); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/IconCostH.png"))); // NOI18N
         jLabel7.setText("Estacionamiento x hora\n");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, -1, 40));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 400, 100));
 
         jLabel8.setFont(new java.awt.Font("Segoe Script", 1, 14)); // NOI18N
         jLabel8.setText("Placa");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Segoe Script", 1, 14)); // NOI18N
         jLabel9.setText("Hora");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Segoe Script", 1, 14)); // NOI18N
         jLabel10.setText("Fecha");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Segoe Script", 1, 14)); // NOI18N
         jLabel11.setText("Lugar");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, -1, -1));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, -1, -1));
 
         btn_tabla.setText("Mostrar tabla");
         btn_tabla.addActionListener(new java.awt.event.ActionListener() {
@@ -273,7 +311,7 @@ public class frm_horaFrac extends javax.swing.JFrame {
                 btn_tablaActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_tabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 460, 340, 30));
+        jPanel1.add(btn_tabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 500, 340, 30));
 
         btn_guardar.setText("Guardar");
         btn_guardar.addActionListener(new java.awt.event.ActionListener() {
@@ -281,7 +319,7 @@ public class frm_horaFrac extends javax.swing.JFrame {
                 btn_guardarActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 415, 90, 30));
+        jPanel1.add(btn_guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 460, 90, 30));
 
         btn_modificar.setText("Modificar");
         btn_modificar.addActionListener(new java.awt.event.ActionListener() {
@@ -289,7 +327,7 @@ public class frm_horaFrac extends javax.swing.JFrame {
                 btn_modificarActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 415, 100, 30));
+        jPanel1.add(btn_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 460, 100, 30));
 
         btn_eliminar.setText("Eliminar");
         btn_eliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -297,21 +335,43 @@ public class frm_horaFrac extends javax.swing.JFrame {
                 btn_eliminarActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(295, 415, 90, 30));
+        jPanel1.add(btn_eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 460, 90, 30));
 
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 420, 20));
 
         txt_placa.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txt_placaKeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txt_placaKeyTyped(evt);
             }
         });
-        jPanel1.add(txt_placa, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, 230, 30));
-        jPanel1.add(txt_hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 232, 230, 30));
-        jPanel1.add(txt_fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 292, 230, 30));
-        jPanel1.add(txt_lugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, 80, 30));
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, 510));
+        jPanel1.add(txt_placa, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, 230, 30));
+        jPanel1.add(txt_hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, 230, 30));
+        jPanel1.add(txt_fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, 230, 30));
+
+        txt_lugar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txt_lugarKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_lugarKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txt_lugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, 80, 30));
+
+        lb_obligatorioP.setFont(new java.awt.Font("Palatino Linotype", 0, 18)); // NOI18N
+        lb_obligatorioP.setForeground(new java.awt.Color(153, 0, 51));
+        lb_obligatorioP.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(lb_obligatorioP, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 200, 110, 40));
+
+        lb_obligatorioL.setFont(new java.awt.Font("Palatino Linotype", 0, 18)); // NOI18N
+        lb_obligatorioL.setForeground(new java.awt.Color(153, 0, 51));
+        lb_obligatorioL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(lb_obligatorioL, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 360, 120, 40));
+        jPanel1.add(lb_fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 830, 600));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -322,7 +382,7 @@ public class frm_horaFrac extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 512, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 599, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -363,6 +423,14 @@ public class frm_horaFrac extends javax.swing.JFrame {
 
     private void txt_placaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_placaKeyTyped
         // TODO add your handling code here:
+        
+        //Limita la cantidad de carracteres (QWE-789-Q)
+        if(txt_placa.getText().length()>=9){
+            evt.consume();
+            Toolkit.getDefaultToolkit().beep();
+        }
+        
+        //Busca los demas valores
           int press=evt.getKeyChar();
         if(press==10){
             String idEncontrado=txt_placa.getText().trim();
@@ -413,6 +481,28 @@ public class frm_horaFrac extends javax.swing.JFrame {
         new csl_horaFracc().setVisible(true);
     }//GEN-LAST:event_btn_tablaActionPerformed
 
+    private void txt_lugarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_lugarKeyTyped
+        // TODO add your handling code here:
+        char validar=evt.getKeyChar();
+        
+        if(Character.isLetter((validar))){
+            getToolkit().beep();
+            evt.consume();
+            
+            JOptionPane.showMessageDialog(rootPane, "Ingrese solo numeros");
+        }
+    }//GEN-LAST:event_txt_lugarKeyTyped
+
+    private void txt_placaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_placaKeyReleased
+        // TODO add your handling code here:
+        validar();
+    }//GEN-LAST:event_txt_placaKeyReleased
+
+    private void txt_lugarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_lugarKeyReleased
+        // TODO add your handling code here:
+        validar();
+    }//GEN-LAST:event_txt_lugarKeyReleased
+
     /**
      * @param args the command line arguments
      */
@@ -457,7 +547,6 @@ public class frm_horaFrac extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -469,6 +558,9 @@ public class frm_horaFrac extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel lb_fondo;
+    private javax.swing.JLabel lb_obligatorioL;
+    private javax.swing.JLabel lb_obligatorioP;
     private javax.swing.JPanel pane_1;
     private javax.swing.JPanel pane_2;
     private javax.swing.JPanel pane_3;
