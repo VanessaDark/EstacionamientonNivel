@@ -150,57 +150,78 @@ public class frm_membresia extends javax.swing.JFrame {
                 btn_menuActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
+        jPanel1.add(btn_menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 80, 30));
 
-        jLabel1.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Lucida Calligraphy", 1, 30)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 204, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/IconMenb.png"))); // NOI18N
         jLabel1.setText("Membresia");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 30, 190, 50));
+        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, 300, -1));
 
         jLabel2.setBackground(new java.awt.Color(204, 204, 255));
-        jLabel2.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Palatino Linotype", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(204, 204, 255));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel2.setText("Placa");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 80, 30));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 90, 30));
 
         jLabel3.setBackground(new java.awt.Color(204, 204, 255));
-        jLabel3.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Palatino Linotype", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(204, 204, 255));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel3.setText("Propietario");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 100, -1));
 
         jLabel4.setBackground(new java.awt.Color(204, 204, 255));
-        jLabel4.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Palatino Linotype", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(204, 204, 255));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel4.setText("Hora");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 50, -1));
 
         jLabel5.setBackground(new java.awt.Color(204, 204, 255));
-        jLabel5.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Palatino Linotype", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(204, 204, 255));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel5.setText("Fecha");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 50, -1));
 
         jLabel6.setBackground(new java.awt.Color(204, 204, 255));
-        jLabel6.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Palatino Linotype", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(204, 204, 255));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel6.setText("Tipo");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, 50, -1));
 
         jLabel7.setBackground(new java.awt.Color(204, 204, 255));
-        jLabel7.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Palatino Linotype", 1, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(204, 204, 255));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel7.setText("Marca");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 190, -1, 20));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 210, 60, 20));
 
         jLabel8.setBackground(new java.awt.Color(204, 204, 255));
-        jLabel8.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Palatino Linotype", 1, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(204, 204, 255));
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel8.setText("Modelo");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 240, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 260, 70, -1));
 
         jLabel9.setBackground(new java.awt.Color(204, 204, 255));
-        jLabel9.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Palatino Linotype", 1, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(204, 204, 255));
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel9.setText("Color");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 290, -1, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 310, 50, -1));
 
         jLabel10.setBackground(new java.awt.Color(204, 204, 255));
-        jLabel10.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Palatino Linotype", 1, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(204, 204, 255));
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel10.setText("Lugar");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 340, -1, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 360, 60, -1));
 
         txt_placa.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -210,16 +231,16 @@ public class frm_membresia extends javax.swing.JFrame {
                 txt_placaKeyTyped(evt);
             }
         });
-        jPanel1.add(txt_placa, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 132, 200, 30));
+        jPanel1.add(txt_placa, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 200, 30));
 
         txt_propietario.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txt_propietarioKeyReleased(evt);
             }
         });
-        jPanel1.add(txt_propietario, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 182, 200, 30));
-        jPanel1.add(txt_hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 232, 200, 30));
-        jPanel1.add(txt_fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 200, 30));
+        jPanel1.add(txt_propietario, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, 200, 30));
+        jPanel1.add(txt_hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 200, 30));
+        jPanel1.add(txt_fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, 200, 30));
 
         txt_modelo.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -229,7 +250,7 @@ public class frm_membresia extends javax.swing.JFrame {
                 txt_modeloKeyTyped(evt);
             }
         });
-        jPanel1.add(txt_modelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 230, 200, 30));
+        jPanel1.add(txt_modelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 250, 200, 30));
 
         cb_tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sedan", "Pick up", "Moto" }));
         cb_tipo.addActionListener(new java.awt.event.ActionListener() {
@@ -237,7 +258,7 @@ public class frm_membresia extends javax.swing.JFrame {
                 cb_tipoActionPerformed(evt);
             }
         });
-        jPanel1.add(cb_tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 330, 200, 30));
+        jPanel1.add(cb_tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 350, 200, 30));
 
         cb_marca.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Audi", "BMW", "Cadilac", "Chevrolet", "Chrysler", "Dodge", "Ferrari", "Fiat", "Ford", "Honda", "Hyundai", "Jeep", "Kia", "Mazda", "Mercedes Benz", "Nissan", "Ram", "Renault", "Susuki", "Tesla", "Toyota", "Volkswagen", "Volvo" }));
         cb_marca.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -248,14 +269,14 @@ public class frm_membresia extends javax.swing.JFrame {
                 cb_marcaKeyTyped(evt);
             }
         });
-        jPanel1.add(cb_marca, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 180, 200, 30));
+        jPanel1.add(cb_marca, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 200, 200, 30));
 
         txt_color.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txt_colorKeyReleased(evt);
             }
         });
-        jPanel1.add(txt_color, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 280, 200, 30));
+        jPanel1.add(txt_color, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 300, 200, 30));
 
         btn_tabla.setText("Mostrar tabla");
         btn_tabla.addActionListener(new java.awt.event.ActionListener() {
@@ -263,7 +284,7 @@ public class frm_membresia extends javax.swing.JFrame {
                 btn_tablaActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_tabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 490, 430, 30));
+        jPanel1.add(btn_tabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 500, 430, 30));
 
         btn_guardar.setText("Guardar");
         btn_guardar.addActionListener(new java.awt.event.ActionListener() {
@@ -271,7 +292,7 @@ public class frm_membresia extends javax.swing.JFrame {
                 btn_guardarActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 450, 90, 30));
+        jPanel1.add(btn_guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 90, 30));
 
         btn_modificar.setText("Modificar");
         btn_modificar.addActionListener(new java.awt.event.ActionListener() {
@@ -279,7 +300,7 @@ public class frm_membresia extends javax.swing.JFrame {
                 btn_modificarActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 450, 100, 30));
+        jPanel1.add(btn_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 460, 100, 30));
 
         btn_eliminar.setText("Eliminar");
         btn_eliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -287,7 +308,7 @@ public class frm_membresia extends javax.swing.JFrame {
                 btn_eliminarActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 450, 90, 30));
+        jPanel1.add(btn_eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 460, 90, 30));
 
         txt_lugar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -297,7 +318,7 @@ public class frm_membresia extends javax.swing.JFrame {
                 txt_lugarKeyTyped(evt);
             }
         });
-        jPanel1.add(txt_lugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 330, 70, 30));
+        jPanel1.add(txt_lugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 350, 70, 30));
 
         btn_limpiar.setText("Limpiar");
         btn_limpiar.addActionListener(new java.awt.event.ActionListener() {
@@ -305,12 +326,15 @@ public class frm_membresia extends javax.swing.JFrame {
                 btn_limpiarActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 450, 90, 30));
+        jPanel1.add(btn_limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 460, 90, 30));
 
         lb_obP1.setFont(new java.awt.Font("MV Boli", 0, 16)); // NOI18N
         lb_obP1.setForeground(new java.awt.Color(204, 0, 0));
-        jPanel1.add(lb_obP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 140, 100, 20));
-        jPanel1.add(fondo_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 540));
+        jPanel1.add(lb_obP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 150, 100, 30));
+
+        fondo_label.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        fondo_label.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/flogins.jpg"))); // NOI18N
+        jPanel1.add(fondo_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 570));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -320,9 +344,7 @@ public class frm_membresia extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 539, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
