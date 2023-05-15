@@ -22,6 +22,7 @@ public class csl_lugar extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         CargarInterfaz();
         CargarDatos();
+        txt_lugar.setEditable(false);
     }
     
     public void CargarInterfaz(){
@@ -74,10 +75,12 @@ public class csl_lugar extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         pane_6 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        btn_menu = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tb_lugar.setModel(new javax.swing.table.DefaultTableModel(
@@ -85,7 +88,7 @@ public class csl_lugar extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Placa", "Hora", "Fecha", "Lugar"
             }
         ));
         tb_lugar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -96,6 +99,8 @@ public class csl_lugar extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tb_lugar);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 172, -1, 173));
+
+        txt_lugar.setBackground(new java.awt.Color(255, 204, 204));
         jPanel1.add(txt_lugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, 60, 30));
 
         jButton1.setBackground(new java.awt.Color(204, 204, 255));
@@ -264,14 +269,15 @@ public class csl_lugar extends javax.swing.JFrame {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 50, 300, 350));
 
-        jButton2.setText("Menu");
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btn_menu.setText("Menu");
+        btn_menu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_menu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btn_menuActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 70, -1));
+        jPanel1.add(btn_menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 35, 90, 30));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 450));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -283,7 +289,7 @@ public class csl_lugar extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 452, Short.MAX_VALUE)
         );
 
         pack();
@@ -320,11 +326,11 @@ public class csl_lugar extends javax.swing.JFrame {
        
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btn_menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_menuActionPerformed
         // TODO add your handling code here:
-        new panel_admin().setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+       new panel_admin().setVisible(true);
+       dispose();
+    }//GEN-LAST:event_btn_menuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -363,14 +369,15 @@ public class csl_lugar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_menu;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;

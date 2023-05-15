@@ -60,6 +60,7 @@ public class csl_membresia extends javax.swing.JFrame {
         btn_menu = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tb_membresia = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -68,12 +69,13 @@ public class csl_membresia extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btn_menu.setText("Menu");
+        btn_menu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_menu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_menuActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 33, 75, -1));
+        jPanel1.add(btn_menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 55, 90, 30));
 
         tb_membresia.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -85,7 +87,13 @@ public class csl_membresia extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tb_membresia);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 780, 250));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 780, 230));
+
+        jLabel2.setFont(new java.awt.Font("Palatino Linotype", 0, 24)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/IconRegisG.png"))); // NOI18N
+        jLabel2.setText("Datos Membresia");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 30, 350, 100));
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, 450));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -146,6 +154,7 @@ public class csl_membresia extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_menu;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tb_membresia;

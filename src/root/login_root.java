@@ -171,7 +171,7 @@ public class login_root extends javax.swing.JFrame {
 
         favicon.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
         favicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/coche.png"))); // NOI18N
-        favicon.setText("LOGO");
+        favicon.setText("ParkCar");
         root.add(favicon, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, -1, -1));
 
         title.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N

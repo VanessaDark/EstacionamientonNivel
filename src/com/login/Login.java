@@ -78,6 +78,7 @@ public class Login extends javax.swing.JFrame {
                 headerMousePressed(evt);
             }
         });
+        header.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         exitBtn.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -108,6 +109,8 @@ public class Login extends javax.swing.JFrame {
             exitBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(exitTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        header.add(exitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 47));
 
         login_admin.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -151,6 +154,8 @@ public class Login extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        header.add(login_admin, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 0, 130, -1));
+
         panel_root.setBackground(new java.awt.Color(255, 255, 255));
         panel_root.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
@@ -172,10 +177,10 @@ public class Login extends javax.swing.JFrame {
         panel_root.setLayout(panel_rootLayout);
         panel_rootLayout.setHorizontalGroup(
             panel_rootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_rootLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(panel_rootLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
                 .addComponent(jLabel1)
-                .addContainerGap())
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         panel_rootLayout.setVerticalGroup(
             panel_rootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -185,27 +190,7 @@ public class Login extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout headerLayout = new javax.swing.GroupLayout(header);
-        header.setLayout(headerLayout);
-        headerLayout.setHorizontalGroup(
-            headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(headerLayout.createSequentialGroup()
-                .addComponent(exitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(login_admin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(panel_root, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 590, Short.MAX_VALUE))
-        );
-        headerLayout.setVerticalGroup(
-            headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(exitBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(headerLayout.createSequentialGroup()
-                .addGroup(headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(panel_root, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(login_admin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        header.add(panel_root, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 80, -1));
 
         bg.add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 40));
 

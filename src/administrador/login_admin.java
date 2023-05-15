@@ -74,7 +74,7 @@ public class login_admin extends javax.swing.JFrame {
         citybg.setBackground(new java.awt.Color(0, 134, 190));
         citybg.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         citybg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/flog.png"))); // NOI18N
-        root.add(citybg, new org.netbeans.lib.awtextra.AbsoluteConstraints(548, 0, 280, 500));
+        root.add(citybg, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 0, 280, 500));
 
         header.setBackground(new java.awt.Color(255, 255, 255));
         header.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {

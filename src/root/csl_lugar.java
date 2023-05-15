@@ -21,6 +21,7 @@ public class csl_lugar extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         CargarInterfaz();
         CargarDatos();
+        txt_lugar.setEditable(false);
     }
     
     public void CargarInterfaz(){
@@ -86,7 +87,7 @@ public class csl_lugar extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Placa", "Hora", "Fecha", "Lugar"
             }
         ));
         tb_lugar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -274,7 +275,7 @@ public class csl_lugar extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 70, -1));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 35, 90, 30));
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 450));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

@@ -7,6 +7,7 @@ package com.login;
 import root.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.JOptionPane;
 import javax.swing.Timer;
 
 /**
@@ -191,7 +192,7 @@ public class panel_usr extends javax.swing.JFrame {
 
     private void btn_lugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_lugarActionPerformed
         // TODO add your handling code here:
-        new csl_lugar().setVisible(true);
+      new csl_lugar().setVisible(true);
         dispose();
     }//GEN-LAST:event_btn_lugarActionPerformed
 
@@ -209,6 +210,7 @@ public class panel_usr extends javax.swing.JFrame {
 
     private void btn_cerrarsesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cerrarsesionActionPerformed
         // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "<----Sesión Cerrada---->");
         new Login().setVisible(true);
         dispose();
     }//GEN-LAST:event_btn_cerrarsesionActionPerformed
@@ -216,7 +218,7 @@ public class panel_usr extends javax.swing.JFrame {
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
         try {
-            String url="C:\\Users\\vanes\\OneDrive\\Escritorio\\POO\\Manual_ParkCar.pdf";
+            String url="C:\\Users\\vanes\\OneDrive\\Escritorio\\POO\\New Estacionamiento\\EstacionamientoUsuarios.pdf";
             ProcessBuilder p=new ProcessBuilder();
             p.command("cmd.exe","/c",url);
             p.start();

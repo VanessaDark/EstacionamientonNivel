@@ -22,6 +22,7 @@ public class csl_lugar extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         CargarInterfaz();
         CargarDatos();
+        txt_lugar.setEditable(false);
     }
     
     public void CargarInterfaz(){
@@ -79,7 +80,7 @@ public class csl_lugar extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(204, 255, 153));
+        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tb_lugar.setModel(new javax.swing.table.DefaultTableModel(
@@ -87,7 +88,7 @@ public class csl_lugar extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Placa", "Hora", "Fecha", "Lugar"
             }
         ));
         tb_lugar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -99,7 +100,7 @@ public class csl_lugar extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 172, -1, 173));
 
-        txt_lugar.setBackground(new java.awt.Color(255, 204, 255));
+        txt_lugar.setBackground(new java.awt.Color(255, 204, 204));
         jPanel1.add(txt_lugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, 60, 30));
 
         jButton1.setBackground(new java.awt.Color(204, 204, 255));
@@ -275,20 +276,20 @@ public class csl_lugar extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 70, -1));
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 440));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 35, 90, 30));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 450));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 867, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 452, Short.MAX_VALUE)
         );
 
         pack();

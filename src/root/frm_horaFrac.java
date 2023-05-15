@@ -140,6 +140,7 @@ public class frm_horaFrac extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btn_menu.setText("Menu");
+        btn_menu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_menu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_menuActionPerformed(evt);
@@ -291,21 +292,22 @@ public class frm_horaFrac extends javax.swing.JFrame {
 
         jLabel8.setFont(new java.awt.Font("Segoe Script", 1, 14)); // NOI18N
         jLabel8.setText("Placa");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Segoe Script", 1, 14)); // NOI18N
         jLabel9.setText("Hora");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, -1, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Segoe Script", 1, 14)); // NOI18N
         jLabel10.setText("Fecha");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, -1, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Segoe Script", 1, 14)); // NOI18N
         jLabel11.setText("Lugar");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, -1, -1));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 370, -1, -1));
 
         btn_tabla.setText("Mostrar tabla");
+        btn_tabla.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_tabla.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_tablaActionPerformed(evt);
@@ -314,6 +316,7 @@ public class frm_horaFrac extends javax.swing.JFrame {
         jPanel1.add(btn_tabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 500, 340, 30));
 
         btn_guardar.setText("Guardar");
+        btn_guardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_guardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_guardarActionPerformed(evt);
@@ -322,6 +325,7 @@ public class frm_horaFrac extends javax.swing.JFrame {
         jPanel1.add(btn_guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 460, 90, 30));
 
         btn_modificar.setText("Modificar");
+        btn_modificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_modificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_modificarActionPerformed(evt);
@@ -330,6 +334,7 @@ public class frm_horaFrac extends javax.swing.JFrame {
         jPanel1.add(btn_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 460, 100, 30));
 
         btn_eliminar.setText("Eliminar");
+        btn_eliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_eliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_eliminarActionPerformed(evt);
@@ -340,6 +345,7 @@ public class frm_horaFrac extends javax.swing.JFrame {
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 420, 20));
 
+        txt_placa.setFont(new java.awt.Font("Nirmala UI", 0, 14)); // NOI18N
         txt_placa.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txt_placaKeyReleased(evt);
@@ -348,10 +354,15 @@ public class frm_horaFrac extends javax.swing.JFrame {
                 txt_placaKeyTyped(evt);
             }
         });
-        jPanel1.add(txt_placa, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, 230, 30));
-        jPanel1.add(txt_hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, 230, 30));
-        jPanel1.add(txt_fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, 230, 30));
+        jPanel1.add(txt_placa, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 220, 30));
 
+        txt_hora.setFont(new java.awt.Font("Nirmala UI", 0, 14)); // NOI18N
+        jPanel1.add(txt_hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, 220, 30));
+
+        txt_fecha.setFont(new java.awt.Font("Nirmala UI", 0, 14)); // NOI18N
+        jPanel1.add(txt_fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, 220, 30));
+
+        txt_lugar.setFont(new java.awt.Font("Nirmala UI", 0, 14)); // NOI18N
         txt_lugar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txt_lugarKeyReleased(evt);
@@ -360,17 +371,17 @@ public class frm_horaFrac extends javax.swing.JFrame {
                 txt_lugarKeyTyped(evt);
             }
         });
-        jPanel1.add(txt_lugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, 80, 30));
+        jPanel1.add(txt_lugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 360, 80, 30));
 
         lb_obligatorioP.setFont(new java.awt.Font("Palatino Linotype", 0, 18)); // NOI18N
         lb_obligatorioP.setForeground(new java.awt.Color(153, 0, 51));
         lb_obligatorioP.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel1.add(lb_obligatorioP, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 200, 110, 40));
+        jPanel1.add(lb_obligatorioP, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, 110, 40));
 
         lb_obligatorioL.setFont(new java.awt.Font("Palatino Linotype", 0, 18)); // NOI18N
         lb_obligatorioL.setForeground(new java.awt.Color(153, 0, 51));
         lb_obligatorioL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel1.add(lb_obligatorioL, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 360, 120, 40));
+        jPanel1.add(lb_obligatorioL, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 360, 120, 40));
         jPanel1.add(lb_fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 830, 600));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -449,7 +460,7 @@ public class frm_horaFrac extends javax.swing.JFrame {
                 }//Fin if
                     
             }//fin for
-            
+            JOptionPane.showMessageDialog(null, "Placas de auto no encontradas");
         }//Fin if
     }//GEN-LAST:event_txt_placaKeyTyped
 

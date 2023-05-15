@@ -56,6 +56,7 @@ public class csl_horaFracc extends javax.swing.JFrame {
         btn_salir = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tb_horafrac = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -69,7 +70,7 @@ public class csl_horaFracc extends javax.swing.JFrame {
                 btn_menuActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 70, -1));
+        jPanel1.add(btn_menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 90, 30));
 
         btn_salir.setText("Salir");
         btn_salir.addActionListener(new java.awt.event.ActionListener() {
@@ -77,22 +78,25 @@ public class csl_horaFracc extends javax.swing.JFrame {
                 btn_salirActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 40, 80, -1));
+        jPanel1.add(btn_salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 60, 90, 30));
 
         tb_horafrac.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Placa", "Hora", "Fecha", "Lugar"
             }
         ));
         jScrollPane1.setViewportView(tb_horafrac);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 720, 220));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 720, 220));
+
+        jLabel2.setFont(new java.awt.Font("Palatino Linotype", 0, 18)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/Hora.png"))); // NOI18N
+        jLabel2.setText("Datos de hora estacionamiento");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, 320, 70));
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 510));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -161,6 +165,7 @@ public class csl_horaFracc extends javax.swing.JFrame {
     private javax.swing.JButton btn_menu;
     private javax.swing.JButton btn_salir;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tb_horafrac;

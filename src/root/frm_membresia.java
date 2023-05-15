@@ -4,23 +4,13 @@
  */
 package root;
 
-import clases.Auto;
-import clases.tiempo;
+import clases.*;
+
 import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.awt.Toolkit;
-import java.awt.print.PageFormat;
-import java.awt.print.Printable;
-import static java.awt.print.Printable.NO_SUCH_PAGE;
-import static java.awt.print.Printable.PAGE_EXISTS;
-import java.awt.print.PrinterException;
-import java.awt.print.PrinterJob;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.LinkedList;
 import javax.swing.JOptionPane;
-import javax.swing.Timer;
+
 
 /**
  *
@@ -426,7 +416,7 @@ public class frm_membresia extends javax.swing.JFrame {
                 }//Fin if
                     
             }//fin for
-            
+            JOptionPane.showMessageDialog(null, "Placas de auto no encontradas");
         }//Fin if
     }//GEN-LAST:event_txt_placaKeyTyped
 

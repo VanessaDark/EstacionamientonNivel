@@ -5,28 +5,33 @@
 package administrador;
 
 import root.*;
+import com.login.*;
+import root.*;
+
 import javax.swing.table.DefaultTableModel;
-import clases.Auto;
-import clases.tiempo;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import clases.*;
+import java.awt.Color;
+import java.awt.Toolkit;
 import javax.swing.JOptionPane;
-import javax.swing.Timer;
+
+
+
 /**
  *
  * @author vanes
  */
 public class salida_vehiculo extends javax.swing.JFrame {
 
-    private DefaultTableModel modelo;
-    int contador=0;
+    public int buscar;
     
     public salida_vehiculo() {
         initComponents();
         this.setLocationRelativeTo(null);
-        CargarInterfaz();
-        CargarDatos();
         mostrarTiempo();
+        txt_entrada.setEditable(false);
+        txt_costo.setEditable(false);
+        txt_fecha.setEditable(false);
+        txt_lugar.setEditable(false);
     }
     
      tiempo tm=new tiempo();
@@ -36,30 +41,29 @@ public class salida_vehiculo extends javax.swing.JFrame {
        
     }
     
-    public void CargarInterfaz(){
-        String datos[][]={};
-        String columna[]={"Placa","Hora","Fecha","Lugar"};
-        modelo=new DefaultTableModel(datos,columna);
-        tb_salida.setModel(modelo);
+    public void validar(){
+        
+         //Placa
+         if(txt_placa.getText().isEmpty()){
+            txt_placa.setBackground(new Color(251, 197, 197));
+            lb_IngPlaca.setText("*Ingrese la placa");
+           
+        }else{
+              txt_placa.setBackground(new Color(224, 251, 197));
+              lb_IngPlaca.setText("");
+        }
+        
+        
+         if(txt_placa.getText().isEmpty() ){
+           
+             btn_pagar.setEnabled(false);
+         }else{
+             btn_pagar.setEnabled(true);
+         }
+        
     }
     
-    public void CargarDatos(){
-        Auto a;
-        for(int i=0; i<frm_horaFrac.contenedorHora.size(); i++){
-            
-            a=(Auto)frm_horaFrac.contenedorHora.get(i);
-            modelo.insertRow(contador,new Object[]{});
-         
-            modelo.setValueAt(a.getPlaca(),contador, 0);
-            modelo.setValueAt(a.getHora(),contador, 1);
-            modelo.setValueAt(a.getFecha(),contador, 2);
-            modelo.setValueAt(a.getLugar(),contador, 3);
-            
-            
-            
-          
-        }
-    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -83,14 +87,15 @@ public class salida_vehiculo extends javax.swing.JFrame {
         btn_calcular = new javax.swing.JButton();
         btn_pagar = new javax.swing.JButton();
         txt_costo = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tb_salida = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
         txt_placa = new javax.swing.JTextField();
-        txt_fecha = new javax.swing.JTextField();
-        txt_lugar = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
         jLabel5 = new javax.swing.JLabel();
+        txt_fecha = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
+        txt_lugar = new javax.swing.JTextField();
+        lb_IngPlaca = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -103,30 +108,39 @@ public class salida_vehiculo extends javax.swing.JFrame {
                 btn_menuActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
+        jPanel1.add(btn_menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 45, 80, 30));
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel2.add(txt_entrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 67, 130, 31));
-        jPanel2.add(txt_salida, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 70, 130, 30));
 
+        txt_entrada.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 18)); // NOI18N
+        txt_entrada.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel2.add(txt_entrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 140, 40));
+
+        txt_salida.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 18)); // NOI18N
+        txt_salida.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel2.add(txt_salida, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 160, 140, 40));
+
+        jLabel2.setFont(new java.awt.Font("Segoe Script", 0, 14)); // NOI18N
         jLabel2.setText("Entrada");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, -1, -1));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, -1, -1));
 
+        jLabel3.setFont(new java.awt.Font("Segoe Script", 0, 14)); // NOI18N
         jLabel3.setText("Salida");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 30, -1, -1));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 110, -1, -1));
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("HH:MMMM:SS");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, 100, 20));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, 100, 20));
 
         Tiempo.setFont(new java.awt.Font("OCR A Extended", 0, 14)); // NOI18N
         Tiempo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Tiempo.setText("El tiempo transcurrido es: \"horas\":\"minutos\":\"segundos\"\n");
-        jPanel2.add(Tiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 490, 30));
+        jPanel2.add(Tiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, 490, 30));
 
+        jLabel6.setFont(new java.awt.Font("Segoe Print", 0, 18)); // NOI18N
         jLabel6.setText("$15 x hora");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, -1, -1));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 300, -1, -1));
 
         btn_calcular.setText("Calcular");
         btn_calcular.addActionListener(new java.awt.event.ActionListener() {
@@ -134,7 +148,7 @@ public class salida_vehiculo extends javax.swing.JFrame {
                 btn_calcularActionPerformed(evt);
             }
         });
-        jPanel2.add(btn_calcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 90, 30));
+        jPanel2.add(btn_calcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 310, 90, 30));
 
         btn_pagar.setText("Pagar");
         btn_pagar.addActionListener(new java.awt.event.ActionListener() {
@@ -142,78 +156,99 @@ public class salida_vehiculo extends javax.swing.JFrame {
                 btn_pagarActionPerformed(evt);
             }
         });
-        jPanel2.add(btn_pagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 295, 90, 30));
-        jPanel2.add(txt_costo, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 292, 70, 30));
+        jPanel2.add(btn_pagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 390, 90, 30));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 520, 370));
+        txt_costo.setFont(new java.awt.Font("Modern No. 20", 0, 18)); // NOI18N
+        txt_costo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel2.add(txt_costo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 380, 80, 40));
 
-        tb_salida.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+        txt_placa.setFont(new java.awt.Font("Rockwell", 1, 20)); // NOI18N
+        txt_placa.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_placa.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txt_placaKeyReleased(evt);
             }
-        ));
-        tb_salida.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tb_salidaMouseClicked(evt);
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_placaKeyTyped(evt);
             }
         });
-        jScrollPane1.setViewportView(tb_salida);
-
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 210, -1, 160));
+        jPanel2.add(txt_placa, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 30, 170, 40));
 
         jLabel1.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         jLabel1.setText("Placa");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 50, -1, -1));
-        jPanel1.add(txt_placa, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, 170, 40));
-        jPanel1.add(txt_fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 132, 110, 30));
-        jPanel1.add(txt_lugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 130, 90, 30));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, 70, 30));
+
+        jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 740, 10));
 
         jLabel5.setFont(new java.awt.Font("Nirmala UI", 0, 14)); // NOI18N
         jLabel5.setText("Fecha");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 100, -1, -1));
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 150, -1, -1));
+
+        txt_fecha.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel2.add(txt_fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 190, 120, 30));
 
         jLabel7.setFont(new java.awt.Font("Nirmala UI", 0, 14)); // NOI18N
         jLabel7.setText("Lugar");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 100, -1, -1));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 250, -1, -1));
+
+        txt_lugar.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel2.add(txt_lugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 290, 90, 30));
+
+        lb_IngPlaca.setFont(new java.awt.Font("OCR A Extended", 0, 14)); // NOI18N
+        lb_IngPlaca.setForeground(new java.awt.Color(153, 0, 0));
+        jPanel2.add(lb_IngPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 30, 160, 40));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 790, 470));
+
+        jLabel8.setFont(new java.awt.Font("Rockwell", 0, 18)); // NOI18N
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/IconSalida.png"))); // NOI18N
+        jLabel8.setText("Salida Vehiculo");
+        jLabel8.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 300, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 846, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 523, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 634, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tb_salidaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb_salidaMouseClicked
-        // TODO add your handling code here:
-        int seleccionar = tb_salida.rowAtPoint(evt.getPoint());
-      
-        txt_placa.setText(String.valueOf(tb_salida.getValueAt(seleccionar, 0)));
-        txt_entrada.setText(String.valueOf(tb_salida.getValueAt(seleccionar, 1)));
-        txt_fecha.setText(String.valueOf(tb_salida.getValueAt(seleccionar, 2)));
-        txt_lugar.setText(String.valueOf(tb_salida.getValueAt(seleccionar, 3)));
-    }//GEN-LAST:event_tb_salidaMouseClicked
-
     private void btn_pagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pagarActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "TICKET"
-                + "\nPlaca: "+txt_placa.getText()
+        frm_horaFrac.contenedorHora.remove(buscar);
+        
+       JOptionPane.showMessageDialog(null, "TICKET"
+                +"\nPlaca: "+txt_placa.getText()
                 +"\nEntrada: "+txt_entrada.getText()
                 +"\nSalida: "+txt_salida.getText()
                 +"\nFecha"+txt_fecha.getText()
                 +"\nLugar"+Integer.parseInt(txt_lugar.getText())
                 +"\nTota: "+txt_costo.getText());
+       
+        
+        txt_placa.setText("");
+        txt_entrada.setText("");
+        txt_salida.setText(tm.horaFormateada);
+        txt_fecha.setText(tm.fechaFormateada);
+        txt_lugar.setText("");
+        txt_costo.setText("");
+       
+        
+        
+        
     }//GEN-LAST:event_btn_pagarActionPerformed
 
     private void btn_menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_menuActionPerformed
@@ -266,6 +301,43 @@ public class salida_vehiculo extends javax.swing.JFrame {
          txt_costo.setText("$ "+total);
     }//GEN-LAST:event_btn_calcularActionPerformed
 
+    private void txt_placaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_placaKeyTyped
+
+         //Limita la cantidad de carracteres (QWE-789-Q)
+        if(txt_placa.getText().length()>=9){
+            evt.consume();
+            Toolkit.getDefaultToolkit().beep();
+        }
+        
+         //Busca los demas valores
+          int press=evt.getKeyChar();
+        if(press==10){
+            String idEncontrado=txt_placa.getText().trim();
+            Auto a;
+            for(int i = 0; i < frm_horaFrac.contenedorHora.size(); i++){
+                a=(Auto)frm_horaFrac.contenedorHora.get(i);
+                if(idEncontrado.equalsIgnoreCase(a.getPlaca())){
+            
+                    txt_entrada.setText(a.getHora());
+                    txt_fecha.setText(a.getFecha());
+                    txt_lugar.setText(Integer.toString(a.getLugar()));
+                    
+                    buscar=i;
+                    break;
+                    
+                }//Fin if
+                  
+            }//fin for
+            JOptionPane.showMessageDialog(null, "Placas de auto no encontradas");
+        }//Fin if
+        
+    }//GEN-LAST:event_txt_placaKeyTyped
+
+    private void txt_placaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_placaKeyReleased
+        // TODO add your handling code here:
+        validar();
+    }//GEN-LAST:event_txt_placaKeyReleased
+
     /**
      * @param args the command line arguments
      */
@@ -293,6 +365,8 @@ public class salida_vehiculo extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -314,10 +388,11 @@ public class salida_vehiculo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tb_salida;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel lb_IngPlaca;
     private javax.swing.JTextField txt_costo;
     private javax.swing.JTextField txt_entrada;
     private javax.swing.JTextField txt_fecha;

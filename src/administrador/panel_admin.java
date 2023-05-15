@@ -8,6 +8,7 @@ import com.login.*;
 import root.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.JOptionPane;
 import javax.swing.Timer;
 
 /**
@@ -84,7 +85,7 @@ public class panel_admin extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("NSimSun", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(204, 204, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Usuario Admin");
+        jLabel3.setText("Administrador");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 160, 28));
 
         jLabel4.setFont(new java.awt.Font("Perpetua", 1, 18)); // NOI18N
@@ -231,7 +232,7 @@ public class panel_admin extends javax.swing.JFrame {
 
     private void btn_lugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_lugarActionPerformed
         // TODO add your handling code here:
-        new csl_lugar().setVisible(true);
+       new csl_lugar().setVisible(true);
         dispose();
     }//GEN-LAST:event_btn_lugarActionPerformed
 
@@ -249,6 +250,7 @@ public class panel_admin extends javax.swing.JFrame {
 
     private void btn_cerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cerrarSesionActionPerformed
         // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "<----Sesión cerrada---->");
         new login_admin().setVisible(true);
         dispose();
     }//GEN-LAST:event_btn_cerrarSesionActionPerformed
@@ -256,7 +258,7 @@ public class panel_admin extends javax.swing.JFrame {
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
         try {
-            String url="C:\\Users\\vanes\\OneDrive\\Escritorio\\POO\\Manual_ParkCar.pdf";
+            String url="C:\\Users\\vanes\\OneDrive\\Escritorio\\POO\\New Estacionamiento\\EstacionamientoUsuarios.pdf";
             ProcessBuilder p=new ProcessBuilder();
             p.command("cmd.exe","/c",url);
             p.start();

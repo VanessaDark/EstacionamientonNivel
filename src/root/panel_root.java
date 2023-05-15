@@ -7,7 +7,6 @@ package root;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.Timer;
-import com.login.Login;
 import javax.swing.JOptionPane;
 
 /**
@@ -63,7 +62,7 @@ public class panel_root extends javax.swing.JFrame {
         btn_membresia = new javax.swing.JButton();
         btn_datosMembresia = new javax.swing.JButton();
         btn_lugar = new javax.swing.JButton();
-        btn_hora = new javax.swing.JButton();
+        btn_horaFracc = new javax.swing.JButton();
         btn_datos = new javax.swing.JButton();
         btn_salida = new javax.swing.JButton();
         btn_cerrarSesion = new javax.swing.JButton();
@@ -124,7 +123,7 @@ public class panel_root extends javax.swing.JFrame {
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 0, 280, 650));
 
         btn_membresia.setBackground(new java.awt.Color(153, 255, 153));
-        btn_membresia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/carroAgr.png"))); // NOI18N
+        btn_membresia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/IconRegisC.png"))); // NOI18N
         btn_membresia.setText("Membresia");
         btn_membresia.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_membresia.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -160,17 +159,17 @@ public class panel_root extends javax.swing.JFrame {
         });
         jPanel1.add(btn_lugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, 150, 80));
 
-        btn_hora.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/reloj.png"))); // NOI18N
-        btn_hora.setText("Hora");
-        btn_hora.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btn_hora.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        btn_hora.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        btn_hora.addActionListener(new java.awt.event.ActionListener() {
+        btn_horaFracc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/reloj.png"))); // NOI18N
+        btn_horaFracc.setText("Hora");
+        btn_horaFracc.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btn_horaFracc.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        btn_horaFracc.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        btn_horaFracc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_horaActionPerformed(evt);
+                btn_horaFraccActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 240, 150, 80));
+        jPanel1.add(btn_horaFracc, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 240, 150, 80));
 
         btn_datos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/icBuscar.png"))); // NOI18N
         btn_datos.setText("Datos ");
@@ -245,8 +244,8 @@ public class panel_root extends javax.swing.JFrame {
 
     private void btn_membresiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_membresiaActionPerformed
         // TODO add your handling code here:
-        new frm_membresia().setVisible(true);
-        dispose();
+       new frm_membresia().setVisible(true);
+       dispose();
     }//GEN-LAST:event_btn_membresiaActionPerformed
 
     private void btn_datosMembresiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_datosMembresiaActionPerformed
@@ -255,11 +254,11 @@ public class panel_root extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btn_datosMembresiaActionPerformed
 
-    private void btn_horaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_horaActionPerformed
+    private void btn_horaFraccActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_horaFraccActionPerformed
         // TODO add your handling code here:
         new frm_horaFrac().setVisible(true);
         dispose();
-    }//GEN-LAST:event_btn_horaActionPerformed
+    }//GEN-LAST:event_btn_horaFraccActionPerformed
 
     private void btn_datosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_datosActionPerformed
         // TODO add your handling code here:
@@ -276,7 +275,7 @@ public class panel_root extends javax.swing.JFrame {
     private void btn_cerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cerrarSesionActionPerformed
         // TODO add your handling code here:
         JOptionPane.showMessageDialog(null, "<---sesión cerrada--->");
-        new Login().setVisible(true);
+        new login_root().setVisible(true);
         dispose();
     }//GEN-LAST:event_btn_cerrarSesionActionPerformed
 
@@ -295,7 +294,7 @@ public class panel_root extends javax.swing.JFrame {
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
         try {
-            String url="C:\\Users\\vanes\\OneDrive\\Escritorio\\POO\\Manual_ParkCar.pdf";
+            String url="C:\\Users\\vanes\\OneDrive\\Escritorio\\POO\\New Estacionamiento\\EstacionamientoUsuarios.pdf";
             ProcessBuilder p=new ProcessBuilder();
             p.command("cmd.exe","/c",url);
             p.start();
@@ -342,7 +341,7 @@ public class panel_root extends javax.swing.JFrame {
     private javax.swing.JButton btn_cerrarSesion;
     private javax.swing.JButton btn_datos;
     private javax.swing.JButton btn_datosMembresia;
-    private javax.swing.JButton btn_hora;
+    private javax.swing.JButton btn_horaFracc;
     private javax.swing.JButton btn_lugar;
     private javax.swing.JButton btn_membresia;
     private javax.swing.JButton btn_renovacion;
